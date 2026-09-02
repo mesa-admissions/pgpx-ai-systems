@@ -60,7 +60,7 @@
 
   /* image placeholder */
   .ph{background:var(--ph);border:2px dashed rgba(255,255,255,.55);border-radius:var(--r);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#f1f1f5;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;position:relative;overflow:hidden}
-  .ph::before{content:"IMAGE";position:absolute;top:10px;left:12px;font-size:10px;letter-spacing:.2em;opacity:.7}
+  .ph:not(:has(img))::before{content:"IMAGE";position:absolute;top:10px;left:12px;font-size:10px;letter-spacing:.2em;opacity:.7}
   .light .ph{background:var(--ph-light);border-color:rgba(30,54,54,.35);color:var(--ink-green)}
   .ph.portrait{aspect-ratio:1/1;border-radius:50%;width:88px;height:88px;padding:0;font-size:9px}
   .ph.portrait::before{display:none}
@@ -178,7 +178,8 @@
   .persona{background:#fff;border:1px solid var(--cream-2);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px}
   .persona .num{font-family:var(--serif);font-size:22px;color:var(--green)}
   #who .persona{padding:0;overflow:hidden}
-  #who .persona .ph{height:140px;border-radius:0;border-width:0 0 2px 0}
+  #who .persona .ph{height:140px;border-radius:0;border-width:0 0 2px 0;padding:0}
+  #who .persona .ph img{width:100%;height:100%;object-fit:cover;display:block}
   #who .persona .body{padding:24px;display:flex;flex-direction:column;gap:10px}
   .persona h3{color:var(--ink-green);font-size:18px}
   .persona .subtitle{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--green)}
@@ -401,10 +402,10 @@
     <h2>You already know how to build. Now learn to <em>own what gets built.</em></h2>
     <p class="lead">Built for working engineers who want to move beyond technical execution into product, customer and business ownership — without stepping away from their careers.</p>
     <div class="personas">
-      <div class="persona"><div class="ph">Software &amp; full-stack engineers</div><div class="body"><div class="num">01</div><h3>Software &amp; Full-Stack Engineers</h3><div class="subtitle">Move from tickets to problems.</div><p>You know how to ship. Now learn to understand customers, shape the product and decide what deserves to be built.</p></div></div>
-      <div class="persona"><div class="ph">Backend, cloud &amp; platform engineers</div><div class="body"><div class="num">02</div><h3>Backend, Cloud &amp; Platform Engineers</h3><div class="subtitle">Take your systems thinking closer to the business.</div><p>Turn technical depth into stronger solutioning, product judgment and ownership of larger problems.</p></div></div>
-      <div class="persona"><div class="ph">Data, AI &amp; ML engineers</div><div class="body"><div class="num">03</div><h3>Data, AI &amp; ML Engineers</h3><div class="subtitle">Move from models to products people use.</div><p>Build customer discovery, MVP thinking, analytics, distribution and commercial judgment around your technical skills.</p></div></div>
-      <div class="persona"><div class="ph">Solutions &amp; high-agency technical builders</div><div class="body"><div class="num">04</div><h3>Solutions &amp; High-Agency Technical Builders</h3><div class="subtitle">Go from implementing solutions to creating them.</div><p>For solutions engineers, technical consultants and engineers who want to build products — or companies — from zero.</p></div></div>
+      <div class="persona"><div class="ph"><img src="images/who-software-engineers.jpg" alt="Software and full-stack engineers collaborating" loading="lazy" decoding="async"></div><div class="body"><div class="num">01</div><h3>Software &amp; Full-Stack Engineers</h3><div class="subtitle">Move from tickets to problems.</div><p>You know how to ship. Now learn to understand customers, shape the product and decide what deserves to be built.</p></div></div>
+      <div class="persona"><div class="ph"><img src="images/who-backend-platform.jpg" alt="Backend, cloud and platform engineers working" loading="lazy" decoding="async"></div><div class="body"><div class="num">02</div><h3>Backend, Cloud &amp; Platform Engineers</h3><div class="subtitle">Take your systems thinking closer to the business.</div><p>Turn technical depth into stronger solutioning, product judgment and ownership of larger problems.</p></div></div>
+      <div class="persona"><div class="ph"><img src="images/who-data-ai-ml.jpg" alt="Data, AI and ML engineers reviewing dashboards" loading="lazy" decoding="async"></div><div class="body"><div class="num">03</div><h3>Data, AI &amp; ML Engineers</h3><div class="subtitle">Move from models to products people use.</div><p>Build customer discovery, MVP thinking, analytics, distribution and commercial judgment around your technical skills.</p></div></div>
+      <div class="persona"><div class="ph"><img src="images/who-solutions-builders.jpg" alt="Solutions and high-agency technical builders in discussion" loading="lazy" decoding="async"></div><div class="body"><div class="num">04</div><h3>Solutions &amp; High-Agency Technical Builders</h3><div class="subtitle">Go from implementing solutions to creating them.</div><p>For solutions engineers, technical consultants and engineers who want to build products — or companies — from zero.</p></div></div>
     </div>
   </div>
 </section>
