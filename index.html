@@ -100,6 +100,7 @@
   @media (max-width:900px){.logo-rows{grid-template-columns:minmax(0,1fr)}}
   .logo-rows .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:12px}
   .logo-rows .row{display:flex;gap:10px;flex-wrap:wrap}
+  .logo-strip{height:52px;width:auto;max-width:100%;object-fit:contain;border-radius:12px;display:block}
 
   /* stat cards */
   .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
@@ -343,9 +344,9 @@
       </div>
     </div>
     <div class="logo-rows">
-      <div><div class="lbl">Built with guidance from</div><div class="row"><div class="ph logo">Harvard University</div><div class="ph logo">Kellogg School of Management</div></div></div>
-      <div><div class="lbl">Supported by operators from</div><div class="row"><div class="ph logo">emergent</div><div class="ph logo">Temple</div><div class="ph logo">Razorpay</div></div></div>
-      <div><div class="lbl">Backed by</div><div class="row"><div class="ph logo">Elevation Capital</div></div></div>
+      <div><div class="lbl">Built with guidance from</div><div class="row"><img class="logo-strip" src="images/logos-guidance.png" alt="Harvard University and Kellogg School of Management" loading="lazy" decoding="async"></div></div>
+      <div><div class="lbl">Supported by operators from</div><div class="row"><img class="logo-strip" src="images/logos-operators.png" alt="emergent, Temple and Razorpay" loading="lazy" decoding="async"></div></div>
+      <div><div class="lbl">Backed by</div><div class="row"><img class="logo-strip" src="images/logos-backed.png" alt="Elevation Capital" loading="lazy" decoding="async"></div></div>
     </div>
   </div>
 </header>
