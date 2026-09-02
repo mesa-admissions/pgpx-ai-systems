@@ -216,6 +216,33 @@
   .panel-head span{font-size:13px;color:var(--muted)}
   .term-card{background:var(--panel);border-radius:var(--r);border:1px solid rgba(255,255,255,.1);padding:28px}
   .term-card p{font-size:15px;color:var(--lilac-2);max-width:60ch}
+  .term-card .quote{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--white);margin-bottom:14px}
+  .term-card .skills{font-size:13px;color:var(--lilac);margin:14px 0 0}
+
+  /* month panel: master/do lists, tools, pressure test, "I can now" */
+  .mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:22px}
+  @media (max-width:700px){.mgrid{grid-template-columns:minmax(0,1fr)}}
+  .mgrid h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+  .mgrid p{font-size:14px;color:var(--lilac-2);max-width:none}
+  .tools-lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-top:22px;margin-bottom:10px}
+  .pressure{margin-top:22px;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 22px;background:rgba(255,255,255,.03)}
+  .pressure .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:8px}
+  .pressure p{font-size:14px;color:var(--lilac-2);max-width:none;margin-bottom:0}
+  .pressure .proof{margin-top:12px;font-size:13px;color:var(--white);padding-top:12px;border-top:1px solid rgba(255,255,255,.1)}
+  .pressure .proof b{color:var(--sage);display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;font-weight:700}
+  .now{margin-top:20px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--lime)}
+
+  /* specialisation tracks (light) */
+  .tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
+  @media (max-width:900px){.tracks{grid-template-columns:minmax(0,1fr)}}
+  .track{background:#fff;border:1px solid var(--cream-2);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px}
+  .track .num{font-family:var(--serif);font-size:22px;color:var(--green)}
+  .track h3{color:var(--ink-green);font-size:19px}
+  .track .subtitle{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--green)}
+  .track p{font-size:14px;color:var(--muted-cream)}
+  .track .chal{margin-top:6px;font-size:13px;color:var(--ink-green)}
+  .track .chal b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-cream);margin-bottom:4px;font-weight:700}
+  .track .now{color:var(--green);font-size:16px;margin-top:4px}
 
   /* outcomes */
   .outcomes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
@@ -574,43 +601,338 @@
 <!-- ================= CURRICULUM ================= -->
 <section class="light" id="curriculum">
   <div class="wrap">
-    <div class="eyebrow">Term by term</div>
-    <h2>AI curriculum, <em>offered to Cohort 4.</em></h2>
-    <p class="lead">Seven terms, each building on the last — from no-code foundations to shipping your own AI system.</p>
+    <div class="eyebrow">Month by month</div>
+    <h2>From writing the code to <em>owning the outcome.</em></h2>
+    <p class="lead">You already know how to engineer software. Over eight months, PGPx pushes you into everything that usually happens before the ticket is written and after the code is shipped: diagnosing the problem, understanding customers, deciding what to build, architecting the solution, putting it into the real world, getting adoption, creating demand and making the commercial case. This isn't five subjects taught independently — every month combines technology, product, customer and business judgment, and gives you more of the problem to own.</p>
+    <div class="chips">
+      <span class="chip">8 months</span><span class="chip">Part-time</span><span class="chip">15 live learning weekends</span>
+      <span class="chip">6 Bengaluru pressure tests</span><span class="chip">Live-company missions</span>
+      <span class="chip">3 specialisation tracks</span><span class="chip">1:1 Builder Operator</span><span class="chip">Final Builder Defence</span>
+    </div>
+
+    <div style="margin-top:56px">
+      <div class="eyebrow">The five capability stacks</div>
+      <h2 style="font-size:clamp(26px,3.2vw,36px)">The curriculum is built around five things <em>great builders do well.</em></h2>
+    </div>
+    <div class="why">
+      <div class="feature"><span class="num">1</span><h3>Problem &amp; <em>Systems Judgment</em></h3><p>See the system behind the symptom. First-principles thinking · workflow diagnosis · root-cause analysis · opportunity sizing · stakeholder mapping · business-model thinking · AI-fit assessment · build vs buy vs automate.</p></div>
+      <div class="feature"><span class="num">2</span><h3>Product &amp; <em>AI Architecture</em></h3><p>Turn a real problem into the right product and system. Product strategy · product wedge · prioritisation · AI UX · system architecture · APIs · data · integrations · evals · reliability · latency and cost trade-offs.</p></div>
+      <div class="feature"><span class="num">3</span><h3>Deployment &amp; <em>Operations</em></h3><p>Make it survive contact with the real world. Production rollout · observability · permissions · security · failure modes · incident response · adoption · stakeholder rollout · change management.</p></div>
+      <div class="feature"><span class="num">4</span><h3>Distribution &amp; <em>Commercial</em></h3><p>Turn capability into adoption and economic value. Segmentation · positioning · pricing · distribution · demos · sales · pilots · procurement · ROI · unit economics.</p></div>
+      <div class="feature"><span class="num">5</span><h3>Ownership &amp; <em>Leadership</em></h3><p>Operate when nobody gives you the next instruction. Decision-making under ambiguity · executive communication · negotiation · influence · prioritisation · scope control · pivot/kill/scale judgment.</p></div>
+    </div>
+
+    <div style="margin-top:56px">
+      <div class="eyebrow">The Builder Core</div>
+      <h2 style="font-size:clamp(26px,3.2vw,36px)">Months 1–6: <em>increasing ambiguity, increasing ownership.</em></h2>
+    </div>
 
     <div class="tabs" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" data-p="t1">Term 1</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="t2">Term 2</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="t3">Term 3</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="t4">Term 4</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="t5">Term 5</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="t6">Term 6</button>
-      <button class="tab" role="tab" aria-selected="false" data-p="t7">Term 7</button>
+      <button class="tab" role="tab" aria-selected="true" data-p="m1">M1 · Diagnose</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="m2">M2 · Validate</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="m3">M3 · Decide</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="m4">M4 · Architect &amp; Build</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="m5">M5 · Deploy &amp; Operate</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="m6">M6 · Distribute &amp; Sell</button>
     </div>
 
-    <div class="panel" id="t1" data-active="true"><div class="term-card"><div class="panel-head"><h3>Term 1 · <em>Foundations</em></h3></div><p>Foundations of AI &amp; No-Code Product Building.</p></div></div>
-    <div class="panel" id="t2"><div class="term-card"><div class="panel-head"><h3>Term 2 · <em>Multimodal</em></h3></div><p>Voice, Multimodal, and Agentic AI Products.</p></div></div>
-    <div class="panel" id="t3"><div class="term-card"><div class="panel-head"><h3>Term 3 · <em>Vertical AI</em></h3></div><p>Vertical AI Products + Automation + Vibe Coding.</p></div></div>
-    <div class="panel" id="t4"><div class="term-card"><div class="panel-head"><h3>Term 4 · <em>Fine-Tuning</em></h3></div><p>Fine-Tuning &amp; Open Source AI Productization.</p></div></div>
-    <div class="panel" id="t5"><div class="term-card"><div class="panel-head"><h3>Term 5 · <em>Agents</em></h3></div><p>Building the AI Agents of the Future.</p></div></div>
-    <div class="panel" id="t6"><div class="term-card"><div class="panel-head"><h3>Term 6 · <em>Scale</em></h3></div><p>Scaling Products &amp; Building AI Systems.</p></div></div>
-    <div class="panel" id="t7"><div class="term-card"><div class="panel-head"><h3>Term 7 · <em>Thesis</em></h3></div><p>Thesis — Solve a Real Problem with AI.</p></div></div>
+    <div class="panel" id="m1" data-active="true"><div class="term-card">
+      <div class="panel-head"><h3>Month 01 · <em>Diagnose</em></h3><span>Campus Pressure Test 01 — The Broken Brief</span></div>
+      <div class="quote">Don't solve the brief. Question it.</div>
+      <p>Most engineers enter after the problem has already been defined. Month 1 pulls you upstream. You'll learn to take an ambiguous business situation, map the system around it, quantify what is actually broken and decide whether software — or AI — is even the right answer.</p>
+      <div class="mgrid">
+        <div><h4>You master</h4><p>First principles · workflow mapping · root-cause analysis · stakeholder mapping · opportunity sizing · business economics · AI-fit · build-vs-buy.</p></div>
+        <div><h4>You do</h4><p>Dissect live business problems, interview stakeholders, map current workflows, quantify pain and defend what you would — and would not — solve.</p></div>
+      </div>
+      <div class="tools-lbl">Representative tools</div>
+      <div class="chips"><span class="chip">Miro / FigJam</span><span class="chip">Notion</span><span class="chip">Sheets / SQL</span><span class="chip">AI research tools</span><span class="chip">Workflow-mapping tools</span></div>
+      <div class="pressure">
+        <div class="lbl">Campus Pressure Test 01 — The Broken Brief</div>
+        <p>A company gives you an ambiguous problem. You are scored on the quality of your diagnosis before you are allowed to build anything.</p>
+        <div class="proof"><b>Proof you leave with</b>Problem &amp; Systems Memo — workflow, root cause, stakeholder map, economic impact, AI-fit assessment and recommended next move.</div>
+      </div>
+      <div class="now">"I can now: take a messy business problem and figure out what is actually worth solving."</div>
+    </div></div>
+
+    <div class="panel" id="m2"><div class="term-card">
+      <div class="panel-head"><h3>Month 02 · <em>Validate</em></h3><span>Campus Pressure Test 02 — Prove the Pain</span></div>
+      <div class="quote">Your assumptions don't count. Go find evidence.</div>
+      <p>Now you leave the screen. Learn to distinguish what customers say from how they actually behave, understand user vs buyer vs decision-maker, discover existing workarounds and test whether the pain is strong enough to trigger change.</p>
+      <div class="mgrid">
+        <div><h4>You master</h4><p>Customer discovery · JTBD · observation · segmentation · pain intensity · buying triggers · willingness to change · willingness to pay.</p></div>
+        <div><h4>You do</h4><p>Conduct 12–15 customer/stakeholder conversations, observe workflows, compare segments, document contradictions and kill at least one assumption you entered with.</p></div>
+      </div>
+      <div class="tools-lbl">Representative tools</div>
+      <div class="chips"><span class="chip">Call-recording / synthesis tools</span><span class="chip">CRM</span><span class="chip">Notion</span><span class="chip">Sheets</span><span class="chip">Survey / research platforms</span></div>
+      <div class="pressure">
+        <div class="lbl">Campus Pressure Test 02 — Prove the Pain</div>
+        <p>You start with a hypothesis. By Sunday, you must return with enough external evidence to recommend one of three things: <strong>Build · Pivot · Kill.</strong> "Kill" can be the best answer.</p>
+        <div class="proof"><b>Proof you leave with</b>Customer Evidence Pack — interviews, observed behaviour, pain ranking, alternatives, buying friction and evidence-backed recommendation.</div>
+      </div>
+      <div class="now">"I can now: tell the difference between an interesting idea and a painful problem."</div>
+    </div></div>
+
+    <div class="panel" id="m3"><div class="term-card">
+      <div class="panel-head"><h3>Month 03 · <em>Decide</em></h3><span>Campus Pressure Test 03 — The Product Room</span></div>
+      <div class="quote">A validated problem still doesn't tell you what to build.</div>
+      <p>This is where product judgment begins. You'll learn to turn customer evidence into competing product approaches, find the wedge, decide the smallest version worth building and make the hard call on what gets left out.</p>
+      <div class="mgrid">
+        <div><h4>You master</h4><p>Product strategy · MVP vs pilot · user journeys · prioritisation · product metrics · AI interaction design · feature economics · pricing hypotheses · kill criteria.</p></div>
+        <div><h4>You do</h4><p>Create multiple solution approaches, test prototypes with users, reject most of the feature list and defend one sharply scoped product.</p></div>
+      </div>
+      <div class="tools-lbl">Representative tools</div>
+      <div class="chips"><span class="chip">Figma</span><span class="chip">v0-style prototyping</span><span class="chip">Linear / Jira</span><span class="chip">Notion</span><span class="chip">Product analytics frameworks</span></div>
+      <div class="pressure">
+        <div class="lbl">Campus Pressure Test 03 — The Product Room</div>
+        <p>Product leader. Founder. Technical reviewer. They don't ask whether you can build it — they ask: why this product, why this user, why this wedge, why now, why AI, why not something simpler?</p>
+        <div class="proof"><b>Proof you leave with</b>Product Strategy Memo — customer, wedge, alternatives rejected, MVP, metrics, pricing hypothesis and critical assumptions.</div>
+      </div>
+      <div class="now">"I can now: turn customer evidence into a product decision I can defend."</div>
+    </div></div>
+
+    <div class="panel" id="m4"><div class="term-card">
+      <div class="panel-head"><h3>Month 04 · <em>Architect &amp; Build</em></h3><span>Campus Pressure Test 04 — 48 Hours to Production</span></div>
+      <div class="quote">Build something that survives beyond the demo.</div>
+      <p>This is not "learn Cursor." You're already an engineer — the goal is to use AI to compress the build-test-learn cycle without outsourcing your judgment to AI. You'll go deeper into the architecture behind modern AI products and the production decisions that separate a clever prototype from usable software.</p>
+      <div class="mgrid">
+        <div><h4>You master</h4><p>AI-native development · LLM/application architecture · APIs · data design · authentication · RAG and agents where appropriate · integrations · evals · latency · inference cost · observability · reliability · permissions · security · fallback design.</p></div>
+        <div><h4>You do</h4><p>Architect and deploy an end-to-end product with real data, instrumentation, user access and documented technical decisions.</p></div>
+      </div>
+      <div class="tools-lbl">Representative tools</div>
+      <div class="chips"><span class="chip">Claude Code / Cursor</span><span class="chip">GitHub</span><span class="chip">OpenAI / Anthropic APIs</span><span class="chip">Supabase / Postgres</span><span class="chip">Vercel</span><span class="chip">n8n</span><span class="chip">PostHog</span><span class="chip">Langfuse / eval tooling</span></div>
+      <div class="pressure">
+        <div class="lbl">Campus Pressure Test 04 — 48 Hours to Production</div>
+        <p>Friday: live company brief. Sunday: working deployment. Then the jury breaks it — API failure, bad model behaviour, latency spike, permission issue, requirement change. Fix it. Explain it. Defend the trade-offs.</p>
+        <div class="proof"><b>Proof you leave with</b>Architecture Review + Technical Decision Record.</div>
+      </div>
+      <div class="now">"I can now: turn a product hypothesis into a real system — and explain every important decision behind it."</div>
+    </div></div>
+
+    <div class="panel" id="m5"><div class="term-card">
+      <div class="panel-head"><h3>Month 05 · <em>Deploy &amp; Operate</em></h3><span>Campus Pressure Test 05 — War Room</span></div>
+      <div class="quote">Shipping is where the easy part ends.</div>
+      <p>A system becomes interesting when real users, messy data and organisational constraints start pushing back. You'll learn to roll out products, monitor them, drive adoption and respond when they fail.</p>
+      <div class="mgrid">
+        <div><h4>You master</h4><p>Rollout strategy · observability · monitoring · incident response · reliability · cost management · permissions · support · adoption · experimentation · activation · retention.</p></div>
+        <div><h4>You do</h4><p>Put a product into a live environment, instrument behaviour, track adoption, respond to problems and ship the next version from evidence.</p></div>
+      </div>
+      <div class="pressure">
+        <div class="lbl">Campus Pressure Test 05 — War Room</div>
+        <p>Something goes wrong: a critical integration fails, costs spike, a user gets the wrong answer, adoption stalls, a stakeholder escalates. Your job isn't just to fix the technology — it's to diagnose, prioritise, communicate and recover.</p>
+        <div class="proof"><b>Proof you leave with</b>Launch Review + Incident Postmortem.</div>
+      </div>
+      <div class="now">"I can now: own a system after launch, not just hand it over."</div>
+    </div></div>
+
+    <div class="panel" id="m6"><div class="term-card">
+      <div class="panel-head"><h3>Month 06 · <em>Distribute &amp; Sell</em></h3><span>Campus Pressure Test 06 — Sell What You Built</span></div>
+      <div class="quote">If nobody wants it, it isn't finished.</div>
+      <p>For many engineers, this is the least familiar part of the program — and one of the most valuable. You'll learn how technology becomes a product somebody discovers, understands, adopts and pays for.</p>
+      <div class="mgrid">
+        <div><h4>You master</h4><p>Segmentation · positioning · pricing · channel strategy · distribution · demos · founder-led selling · solution sales · pilots · procurement · ROI · unit economics · negotiation.</p></div>
+        <div><h4>You do</h4><p>Find users yourself, run distribution experiments, pitch buyers, demo the product, test pricing, handle objections and keep a rejection log.</p></div>
+      </div>
+      <div class="tools-lbl">Representative tools</div>
+      <div class="chips"><span class="chip">CRM</span><span class="chip">Outbound / enrichment tools</span><span class="chip">Analytics</span><span class="chip">Landing-page stack</span><span class="chip">Content / distribution workflows</span><span class="chip">Sales / demo tooling</span></div>
+      <div class="pressure">
+        <div class="lbl">Campus Pressure Test 06 — Sell What You Built</div>
+        <p>Don't show us your GTM strategy. Show us what happened when you tried it. Evidence might be a pilot, committed user, adoption, qualified pipeline, paid customer — or a high-quality rejection that forced you to change the product.</p>
+        <div class="proof"><b>Proof you leave with</b>GTM + Commercial Case.</div>
+      </div>
+      <div class="now">"I can now: take something I've built and create evidence that someone actually wants it."</div>
+    </div></div>
+
+    <div class="btn-row"><a class="btn btn-white" href="#admissions">Download full curriculum</a><a class="btn btn-ghost" href="#admissions">Apply now</a></div>
+  </div>
+</section>
+
+<!-- ================= LIVE-COMPANY MISSIONS ================= -->
+<section id="live-missions">
+  <div class="wrap">
+    <div class="eyebrow">Applied, not simulated</div>
+    <h2>Two live-company missions, <em>not case competitions.</em></h2>
+    <p class="lead">Across the program, the classroom gives way to actual company problems. Real stakeholders, real data, real consequences — the company has to live with what you recommend and what you build.</p>
+    <div class="hacks">
+      <div class="hack">
+        <div class="ph">Team working a live-company brief, Bengaluru campus</div>
+        <div class="body">
+          <div class="num">Live-Company Mission 01 · Months 1–4</div>
+          <h3>Problem → Pilot</h3>
+          <p>Your team works with real stakeholders over multiple weeks, moving through Discovery → Diagnosis → Solution Design → Build → Pilot. The company supplies context and stakeholder access; Mesa supplies product and technical review.</p>
+          <div class="out">"The company has to live with what you recommend and what you build."</div>
+          <p style="font-size:13px;color:var(--lilac-2);margin-top:12px;max-width:none">You leave with: problem memo · customer evidence · solution proposal · architecture · working pilot · stakeholder feedback · postmortem.</p>
+        </div>
+      </div>
+      <div class="hack">
+        <div class="ph">Team presenting measured business impact to a client</div>
+        <div class="body">
+          <div class="num">Live-Company Mission 02 · Months 5–6</div>
+          <h3>Pilot → Impact</h3>
+          <p>Your second company mission raises the bar. This time, shipping isn't enough — you're expected to improve something measurable: turnaround time · conversion · sales productivity · support resolution · operating cost · quality · adoption.</p>
+          <div class="out">"The question changes from 'Does it work?' to 'Did it matter?'"</div>
+          <p style="font-size:13px;color:var(--lilac-2);margin-top:12px;max-width:none">You'll scope the work, align stakeholders, deploy, monitor usage and defend the business impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SPECIALISATIONS ================= -->
+<section class="light" id="specialisations">
+  <div class="wrap">
+    <div class="eyebrow">Specialisations</div>
+    <h2>Learn the whole loop. <em>Then go deeper where you have an edge.</em></h2>
+    <p class="lead">The first half of PGPx creates the common Builder Core. From there, you add specialist depth in one of three directions.</p>
+    <div class="tracks">
+      <div class="track">
+        <span class="num">01</span>
+        <h3>AI Product &amp; Zero-to-One</h3>
+        <div class="subtitle">Problem → Product → Adoption</div>
+        <p>For engineers who want to move closer to deciding what gets built and why. Go deeper into AI product strategy, product wedges, AI UX, experimentation, metrics, retention, roadmap judgment, product economics and zero-to-one launches.</p>
+        <div class="chal"><b>Signature challenge</b>Take an ambiguous customer problem and build a product that earns repeated usage.</div>
+        <div class="chal"><b>Proof</b>AI Product Operating Memo + shipped product</div>
+        <div class="now">"I can now own the decisions between customer insight and product adoption."</div>
+      </div>
+      <div class="track">
+        <span class="num">02</span>
+        <h3>AI Solutions &amp; Forward Deployment</h3>
+        <div class="subtitle">Customer → System → Deployment</div>
+        <p>For engineers who want to own difficult customer and enterprise problems end-to-end. Go deeper into enterprise discovery, scoping, solution architecture, integrations, security, permissions, deployment, SOW thinking, stakeholder management, rollout, adoption and ROI.</p>
+        <div class="chal"><b>Signature challenge</b>Take one real-company problem from discovery to a deployed solution used by a real team.</div>
+        <div class="chal"><b>Proof</b>Deployment Dossier</div>
+        <div class="now">"I can now own the messy space between a customer's problem and a working production system."</div>
+      </div>
+      <div class="track">
+        <span class="num">03</span>
+        <h3>AI GTM &amp; Growth Engineering</h3>
+        <div class="subtitle">Technology → Distribution → Revenue</div>
+        <p>For engineers who want technology to sit closer to growth and revenue. Go deeper into GTM systems, enrichment, outbound automation, growth loops, experimentation, RevOps, attribution, conversion, monetisation and funnel economics.</p>
+        <div class="chal"><b>Signature challenge</b>Build a system that measurably changes a commercial metric.</div>
+        <div class="chal"><b>Proof</b>Revenue System Case</div>
+        <div class="now">"I can now build systems that don't just save engineering time — they move business numbers."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUILDER OPERATOR + SCORECARD ================= -->
+<section id="operator">
+  <div class="wrap">
+    <div class="eyebrow">Your 1:1 Builder Operator</div>
+    <h2>One senior practitioner. <em>Eight months of decisions under scrutiny.</em></h2>
+    <p class="lead">This isn't mentorship as coffee chats. Your Builder Operator follows your work across the program and pressure-tests the choices you make — at major gates, reviewing your progress across Problem, Customer, Product, Technical, Commercial and Ownership.</p>
+    <div class="note"><b>What they ask:</b> What problem are you choosing? What evidence are you ignoring? What are you overbuilding? What trade-off are you avoiding? Why isn't anybody using it? What happens next?</div>
+    <div class="note">The role isn't to give you the answer. It's to make it harder for you to hide behind the answer you're already comfortable with.</div>
+
+    <div style="margin-top:48px">
+      <div class="eyebrow">The Builder Scorecard</div>
+      <h2 style="font-size:clamp(26px,3.2vw,36px)">You should know exactly where <em>you're getting stronger.</em></h2>
+      <p class="lead subhead">Throughout PGPx, your work is evaluated across six dimensions. There are no marks for merely being present — the evidence is in the work.</p>
+    </div>
+    <div class="why">
+      <div class="feature"><span class="num">i</span><h3>Problem <em>Judgment</em></h3><p>Can you identify what actually matters?</p></div>
+      <div class="feature"><span class="num">ii</span><h3>Customer <em>Judgment</em></h3><p>Can you discover truth rather than validate your assumptions?</p></div>
+      <div class="feature"><span class="num">iii</span><h3>Product <em>Judgment</em></h3><p>Can you decide what deserves to exist?</p></div>
+      <div class="feature"><span class="num">iv</span><h3>Technical <em>Judgment</em></h3><p>Can you build robust systems and make good trade-offs?</p></div>
+      <div class="feature"><span class="num">v</span><h3>Commercial <em>Judgment</em></h3><p>Can you create adoption, demand or measurable value?</p></div>
+      <div class="feature"><span class="num">vi</span><h3>Ownership</h3><p>Can you keep moving when nobody tells you what happens next?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUILDER RESIDENCY ================= -->
+<section class="light" id="residency">
+  <div class="wrap">
+    <div class="eyebrow">Months 07–08</div>
+    <h2>Builder Residency. <em>Now nobody gives you the problem.</em></h2>
+    <p class="lead">For six months, the program has gradually removed the scaffolding. For the final two months, almost all of it disappears. Choose one route. Find the problem. Build the solution. Put it into the real world. Generate evidence. Decide what it deserves to become.</p>
+    <div class="builds">
+      <div class="build dark"><div class="ph">Route 1 — building an AI product</div><div class="body"><div class="tag">ROUTE 01</div><h3>Build an AI Product</h3><p>Find a problem → validate → launch → acquire users → test pricing → iterate.</p><div class="feel">"Your product. Your users. Your call."</div></div></div>
+      <div class="build dark"><div class="ph">Route 2 — deploying inside a company</div><div class="body"><div class="tag">ROUTE 02</div><h3>Deploy Into a Company</h3><p>Find a workflow → scope → integrate → deploy → drive adoption → measure impact.</p><div class="feel">"Your workflow. Their team. Real impact."</div></div></div>
+      <div class="build dark"><div class="ph">Route 3 — building a revenue system</div><div class="body"><div class="tag">ROUTE 03</div><h3>Build a Revenue System</h3><p>Find a commercial bottleneck → build → launch → measure pipeline/conversion/productivity → iterate.</p><div class="feel">"Your bottleneck. Your system. Measurable movement."</div></div></div>
+    </div>
 
     <div style="margin-top:40px">
-      <div class="eyebrow">Tools</div>
+      <div class="eyebrow">Minimum evidence bar</div>
+      <p class="lead" style="font-size:16px">By the final defence, the work should include:</p>
       <div class="chips">
-        <span class="chip">Make</span><span class="chip">OpenAI</span><span class="chip">Canva</span><span class="chip">Zapier</span>
-        <span class="chip">Typedream</span><span class="chip">Airtable</span><span class="chip">Descript</span><span class="chip">Notion</span>
+        <span class="chip">15+ final-sprint customer/stakeholder conversations</span>
+        <span class="chip">A functioning deployed product/system</span>
+        <span class="chip">Real external users or a real internal business team</span>
+        <span class="chip">Instrumented analytics</span>
+        <span class="chip">At least two substantive iterations</span>
+        <span class="chip">Distribution or adoption attempts</span>
+        <span class="chip">Commercial/business evidence</span>
+        <span class="chip">Documented failures and trade-offs</span>
+        <span class="chip">An executive-ready business case</span>
+        <span class="chip">A Scale / Pivot / Kill recommendation</span>
+      </div>
+      <p style="font-size:13px;color:var(--muted-cream);margin-top:16px;max-width:70ch">The purpose isn't to manufacture vanity traction. It is to prove that you know how to make decisions when reality disagrees with you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUILDER DEFENCE + GRADUATION BAR ================= -->
+<section id="defence">
+  <div class="wrap">
+    <div class="eyebrow">Builder Defence</div>
+    <h2>30 minutes. <em>No hiding behind the demo.</em></h2>
+    <p class="lead">At the end of the program, a jury challenges the work from five directions. Your jury can include founders, product leaders, technical practitioners, specialist operators and investors.</p>
+    <div class="why">
+      <div class="feature"><span class="num">i</span><h3>Problem</h3><p>Was this worth solving?</p></div>
+      <div class="feature"><span class="num">ii</span><h3>Customer</h3><p>What evidence do you actually have?</p></div>
+      <div class="feature"><span class="num">iii</span><h3>Product</h3><p>Why did you build this version?</p></div>
+      <div class="feature"><span class="num">iv</span><h3>Technology</h3><p>Why this architecture and these trade-offs?</p></div>
+      <div class="feature"><span class="num">v</span><h3>Business</h3><p>What changed because this exists?</p></div>
+    </div>
+    <div class="now" style="font-size:22px">"Don't pitch the idea. Defend the evidence."</div>
+
+    <div style="margin-top:56px">
+      <div class="eyebrow">Graduation bar</div>
+      <h2 style="font-size:clamp(26px,3.2vw,36px)">Attendance doesn't earn the credential. <em>Capability does.</em></h2>
+      <p class="lead subhead">To graduate, participants clear six major capability gates, and complete live-company missions, a specialisation, the Builder Residency, a final defence and a proof-of-work portfolio.</p>
+      <div class="chips">
+        <span class="chip">Problem Gate</span><span class="chip">Customer Gate</span><span class="chip">Product Gate</span>
+        <span class="chip">Technical Gate</span><span class="chip">Operations Gate</span><span class="chip">Commercial Gate</span>
       </div>
     </div>
-    <div style="margin-top:32px">
-      <div class="eyebrow">Techniques</div>
-      <div class="chips">
-        <span class="chip">Prompt Engineering 101</span><span class="chip">Reading API Docs</span>
-        <span class="chip">Voice transcription &amp; synthesis</span><span class="chip">No-code app deployment</span>
-      </div>
+  </div>
+</section>
+
+<!-- ================= WHAT YOU LEAVE WITH ================= -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="eyebrow">Your proof of work</div>
+    <h2>Not 30 shallow projects. <em>A handful you can defend deeply.</em></h2>
+    <p class="lead">Your final Builder Portfolio.</p>
+    <div class="why">
+      <div class="feature"><span class="num">01</span><h3>Problem &amp; <em>Systems Memo</em></h3><p>How you diagnosed a complex business problem.</p></div>
+      <div class="feature"><span class="num">02</span><h3>Customer <em>Evidence Case</em></h3><p>How external evidence changed your view.</p></div>
+      <div class="feature"><span class="num">03</span><h3>Product <em>Strategy Memo</em></h3><p>What you chose to build — and what you rejected.</p></div>
+      <div class="feature"><span class="num">04</span><h3>Architecture + <em>Deployment Review</em></h3><p>How the system works, its trade-offs and how it behaved in the real world.</p></div>
+      <div class="feature"><span class="num">05</span><h3>GTM + <em>Commercial Case</em></h3><p>How you tried to create adoption or demand.</p></div>
+      <div class="feature"><span class="num">06</span><h3>Final <em>Builder Dossier</em></h3><p>The complete journey from ambiguity to outcome.</p></div>
     </div>
-    <div class="btn-row"><a class="btn btn-white" href="#admissions">Download full curriculum</a><a class="btn btn-ghost" href="#admissions">Apply now</a></div>
+  </div>
+</section>
+
+<!-- ================= THE WEBSITE CLOSE ================= -->
+<section class="light" id="the-close">
+  <div class="wrap" style="text-align:center">
+    <div class="eyebrow" style="justify-content:center">Eight months. Increasing ambiguity. Increasing ownership.</div>
+    <div class="tagline" style="justify-content:center;background:transparent;border-color:var(--cream-2);color:var(--ink-green);margin-left:auto;margin-right:auto">
+      <span>Month 1: Diagnose the problem.</span><span class="sep">·</span>
+      <span>Month 2: Find the truth.</span><span class="sep">·</span>
+      <span>Month 3: Decide what should exist.</span><span class="sep">·</span>
+      <span>Month 4: Architect and build it.</span><span class="sep">·</span>
+      <span>Month 5: Deploy and operate it.</span><span class="sep">·</span>
+      <span>Month 6: Create demand for it.</span><span class="sep">·</span>
+      <em>Months 7–8: Own the whole thing.</em>
+    </div>
+    <p class="lead" style="margin:36px auto 0">You enter PGPx as an engineer who knows how to build software. The ambition is that you leave able to say:</p>
+    <h1 style="margin-top:20px"><em>"Give me the problem."</em></h1>
+    <p class="lead" style="margin:20px auto 0">And eventually:</p>
+    <h1 style="margin-top:6px"><em>"Don't even give me that. I'll find one worth solving."</em></h1>
   </div>
 </section>
 
@@ -620,12 +942,12 @@
     <div>
       <div class="eyebrow">What's permanent</div>
       <h2>Outcomes <em>you can expect.</em></h2>
-      <ul class="olist">
-        <li><span class="n">i</span><div><b>26L average CTC</b><span>Across the Mesa PG cohort, with a 2.8X average CTC jump from pre-program roles.</span></div></li>
-        <li><span class="n">ii</span><div><b>45L highest CTC</b><span>The strongest individual outcomes from recent cohorts.</span></div></li>
-        <li><span class="n">iii</span><div><b>70+ hiring partners</b><span>Startups and companies that actively recruit from Mesa cohorts.</span></div></li>
-        <li><span class="n">iv</span><div><b>100% placement rate</b><span>Backed by 58% of graduates landing founder-facing roles.</span></div></li>
-      </ul>
+      <div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:24px">
+        <div class="stat"><b>26L</b><span>Average CTC — across the Mesa PG cohort, with a 2.8× average CTC jump from pre-program roles.</span></div>
+        <div class="stat"><b>45L</b><span>Highest CTC — the strongest individual outcomes from recent cohorts.</span></div>
+        <div class="stat"><b>70<em>+</em></b><span>Hiring partners — startups and companies that actively recruit from Mesa cohorts.</span></div>
+        <div class="stat"><b>100<em>%</em></b><span>Placement rate — backed by 58% of graduates landing founder-facing roles.</span></div>
+      </div>
       <div class="btn-row"><a class="btn btn-ghost" href="#">Learn more</a><a class="btn btn-lime" href="#">Download placement report</a></div>
       <div class="note"><b>The Economic Times:</b> "New-age B-school report highlights strong startup placements and early offers." Mesa School of Business, a startup-focused, AI-first institution backed by Elevation Capital, has released independently audited placement outcomes showing an average CTC of ₹26 lakh for its first two cohorts, with 60% of graduates in founder-facing roles and a 2.8x average salary jump.</div>
       <div class="note">Outcomes here aren't just placements; they're measured by the responsibility you earn through founder-facing roles, real ownership, and the ability to make decisions that move a business.</div>
