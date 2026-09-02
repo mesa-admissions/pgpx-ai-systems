@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="PGP in AI Systems &amp; Business (PGPx): an 8-month, part-time builder program at Mesa School of Business for working software engineers.">
+<title>PGPx: AI Systems &amp; Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+  /* ===================================================================
+     Design system copied verbatim from mesaschool.co/pgp-ascend/ — this
+     page reskins PGP in AI Systems & Business into that visual language.
+     =================================================================== */
+  :root{
+    --navy:#262626; --panel:#303030; --panel2:#2c2c2c; --purple:#3a3a3a; --purple-h:#3a3a3a;
+    --lilac:#d2d2ce; --lilac-2:#d2d2ce; --lilac-3:#f2f2f0; --lime:#4CCB6A; --sage:#9ad9ab; --green:#2f8f49; --ink-green:#1c1c1c;
+    --cream:#ececea; --cream-2:#d8d8d4; --white:#fbfbfb; --muted:#8f8f8b; --muted-cream:#55554f;
+    --ph:#8d8d8a; --ph-dark:#3a3a3a; --ph-light:#d9d9d6;
+    --serif:"Instrument Serif","New York Large","New York",Georgia,"Times New Roman",serif;
+    --sans:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --maxw:1180px; --r:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--navy);color:var(--white);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:88px 0}
+  @media (max-width:760px){section{padding:56px 0}}
+  h1,h2,h3{font-weight:300;letter-spacing:-0.01em;text-wrap:balance;line-height:1.1}
+  h1{font-size:clamp(38px,5.4vw,66px)}
+  h2{font-size:clamp(30px,4vw,48px);margin-bottom:18px}
+  h3{font-size:22px;font-weight:600;line-height:1.25}
+  h1 em,h2 em,.em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0}
+  .hero h1 em{color:var(--lime)}
+  .light h1,.light h2,.light h3{color:var(--ink-green)}
+  p{max-width:62ch}
+  .lead{font-size:18px;color:var(--lilac-2);max-width:60ch}
+  .light .lead,.light p{color:var(--muted-cream)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:14px}
+  .light .eyebrow{color:var(--green)}
+  .light{background:var(--cream);color:var(--ink-green)}
+  .subhead{margin-top:-6px;margin-bottom:36px}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:16px;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;max-width:100%}
+  @media (max-width:540px){.btn{white-space:normal;text-align:center;justify-content:center;width:100%}}
+  .btn-lime{background:var(--lime);color:#0f1a12}
+  .btn-lime:hover{background:var(--purple-h);color:var(--white)}
+  .btn-white{background:var(--white);color:var(--navy)}
+  .btn-white:hover{background:var(--purple-h);color:var(--white)}
+  .btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.25)}
+  .btn-ghost:hover{border-color:var(--lilac);color:var(--lilac)}
+  .light .btn-ghost{color:var(--ink-green);border-color:rgba(30,54,54,.3)}
+  .btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .section-cta{margin-top:40px}
+
+  /* image placeholder */
+  .ph{background:var(--ph);border:2px dashed rgba(255,255,255,.55);border-radius:var(--r);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#f1f1f5;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;position:relative;overflow:hidden}
+  .ph::before{content:"IMAGE";position:absolute;top:10px;left:12px;font-size:10px;letter-spacing:.2em;opacity:.7}
+  .light .ph{background:var(--ph-light);border-color:rgba(30,54,54,.35);color:var(--ink-green)}
+  .ph.portrait{aspect-ratio:1/1;border-radius:50%;width:88px;height:88px;padding:0;font-size:9px}
+  .ph.portrait::before{display:none}
+  .ph.logo{height:40px;min-width:120px;width:auto;border-radius:8px;padding:0 12px;font-size:11px;letter-spacing:.04em;text-transform:none;font-weight:700;background:transparent;border-style:dashed;color:var(--muted)}
+  .ph.logo::before{display:none}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(14,14,14,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+  .logo{font-weight:800;font-size:18px;letter-spacing:.02em;white-space:nowrap}
+  .logo span{color:var(--lime)}
+  .nav-links{display:flex;gap:20px;white-space:nowrap;font-size:14px;font-weight:600;color:var(--lilac-2)}
+  .nav-links a:hover{color:var(--white)}
+  .nav-cta{display:flex;gap:10px}
+  .nav-cta .btn{padding:11px 18px;white-space:nowrap;width:auto}
+  @media (max-width:1200px){.nav-cta .btn-ghost{display:none}}
+  @media (max-width:900px){.nav-links{display:none}.logo{font-size:17px}}
+
+  /* hero */
+  .hero{padding:80px 0 60px;background:var(--navy)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+  @media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+  .hero h1{margin:14px 0 20px}
+  .hero h1 br{display:none}
+  @media (min-width:900px){.hero h1 br{display:inline}}
+  .hero h1 strong{font-weight:600}
+  .specs{display:flex;flex-wrap:wrap;gap:22px;margin-top:30px;font-size:14px;font-weight:600;color:var(--lilac-2)}
+  .specs div{display:flex;align-items:center;gap:8px}
+  .specs svg{width:18px;height:18px;stroke:var(--lilac);fill:none;stroke-width:1.8}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .pill{border:1px solid rgba(255,255,255,.45);border-radius:40px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--lilac)}
+  .collage{display:grid}
+  .collage .ph.video{aspect-ratio:16/9;width:100%;flex-direction:column;gap:10px}
+  .collage .ph.video::before{content:"VIDEO"}
+  .collage .ph.video .play{width:56px;height:56px;fill:none;stroke:currentColor;stroke-width:1.4;opacity:.85}
+  .logo-rows{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1)}
+  @media (max-width:900px){.logo-rows{grid-template-columns:minmax(0,1fr)}}
+  .logo-rows .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:12px}
+  .logo-rows .row{display:flex;gap:10px;flex-wrap:wrap}
+
+  /* stat cards */
+  .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+  @media (max-width:1000px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media (max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .stat{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:24px 20px}
+  .stat b{display:block;font-size:38px;font-weight:300;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums}
+  .stat b em{font-family:var(--serif);font-style:normal;color:var(--lime)}
+  .stat span{font-size:13px;color:var(--lilac-2);line-height:1.4;display:block}
+
+  /* why-we-built / feature grid */
+  .why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:36px 0 36px}
+  @media (max-width:900px){.why{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:600px){.why{grid-template-columns:minmax(0,1fr);gap:10px}}
+  .feature{background:var(--panel);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:26px;position:relative}
+  .feature .num{position:absolute;top:20px;right:24px;font-family:var(--serif);font-size:22px;color:rgba(255,255,255,.25)}
+  .feature h3{font-size:19px;font-weight:600;color:var(--white);margin-bottom:12px;max-width:85%}
+  .feature h3 em{font-family:var(--serif);font-style:italic;color:var(--lime)}
+  .feature p{font-size:14px;color:var(--lilac-2)}
+
+  /* build wall / experience */
+  .builds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
+  @media (max-width:900px){.builds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:540px){.builds{grid-template-columns:minmax(0,1fr)}}
+  .build{background:#fff;border:1px solid var(--cream-2);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+  .build .ph{height:170px;border-radius:0;border-width:0 0 2px 0}
+  .build .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .build .tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:var(--green);font-weight:700}
+  .build h3{color:var(--ink-green);font-size:19px}
+  .build p{font-size:14px;color:var(--muted-cream)}
+  .build .feel{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-green);border-top:1px solid var(--cream-2);padding-top:12px;margin-top:auto}
+
+  /* dark variant of build card, used for "deep end" experience grid */
+  .build.dark{background:var(--panel);border:1px solid rgba(255,255,255,.08)}
+  .build.dark .tag{color:var(--sage)}
+  .build.dark h3{color:var(--white)}
+  .build.dark p{color:var(--lilac-2)}
+  .build.dark .feel{color:var(--lime);border-top-color:rgba(255,255,255,.1)}
+
+  .tagline{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:40px;padding:20px 28px;border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:16px;font-weight:600;color:#fff}
+  .tagline em{font-family:var(--serif);font-style:italic;color:var(--lime);font-weight:600}
+  .tagline .sep{color:rgba(255,255,255,.35)}
+
+  /* stack of chips */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .chip{background:rgba(255,255,255,.12);color:var(--lilac);border-radius:40px;padding:8px 14px;font-size:13px;font-weight:600}
+  .light .chip{background:var(--ph-light);color:var(--ink-green)}
+  details.transcript{margin-top:22px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;color:var(--lilac-2);font-size:14px}
+  details.transcript summary{cursor:pointer;font-weight:700;color:var(--white)}
+  details.transcript p{margin-top:12px;max-width:70ch}
+
+  /* hackathon-style story cards (Life at Mesa) */
+  .hacks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:40px}
+  @media (max-width:760px){.hacks{grid-template-columns:minmax(0,1fr)}}
+  .hack{background:var(--panel);border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+  .hack .ph{height:190px;border-radius:0;border-width:0}
+  .hack .body{padding:20px 22px 24px}
+  .hack .num{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:8px}
+  .hack h3{font-size:19px;margin-bottom:8px;color:var(--white)}
+  .hack p{font-size:14px;color:var(--lilac-2)}
+  .hack .out{margin-top:12px;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--white)}
+
+  /* demo-style banner (photo + eyebrow + stats) */
+  .demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;margin-bottom:56px}
+  .demo:last-child{margin-bottom:0}
+  @media (max-width:900px){.demo{grid-template-columns:minmax(0,1fr)}}
+  .demo .ph{aspect-ratio:4/3}
+  .demo-speaker{margin-top:18px;font-size:13px;color:var(--lilac-2)}
+  .demo-speaker b{display:block;color:#fff;font-size:14px}
+
+  /* personas */
+  .personas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:40px}
+  @media (max-width:1000px){.personas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:540px){.personas{grid-template-columns:minmax(0,1fr)}}
+  .persona{background:#fff;border:1px solid var(--cream-2);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px}
+  .persona .num{font-family:var(--serif);font-size:22px;color:var(--green)}
+  #who .persona{padding:0;overflow:hidden}
+  #who .persona .ph{height:140px;border-radius:0;border-width:0 0 2px 0}
+  #who .persona .body{padding:24px;display:flex;flex-direction:column;gap:10px}
+  .persona h3{color:var(--ink-green);font-size:18px}
+  .persona .subtitle{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--green)}
+  .persona p{font-size:14px;color:var(--muted-cream)}
+
+  /* mentors: horizontal scroller (reused for supporters, alumni) */
+  .scroller-head{display:flex;justify-content:space-between;align-items:center;margin-top:36px}
+  .scroller-count{font-size:13px;color:var(--muted);font-weight:600}
+  .arrows{display:flex;gap:8px}
+  .arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--white);font-size:18px;cursor:pointer;font-family:inherit}
+  .arrow:hover{background:var(--purple-h);border-color:var(--purple-h)}
+  .mentors{display:flex;gap:20px;margin-top:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:var(--purple) transparent}
+  .mentors::-webkit-scrollbar{height:6px}
+  .mentors::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
+  .mentor{flex:0 0 300px;scroll-snap-align:start;background:var(--panel);border-radius:24px;border:1px solid rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column}
+  @media (max-width:540px){.mentor{flex-basis:84vw}}
+  .mentor > .ph{height:260px;border-radius:0;border-width:0 0 2px 0}
+  .mbody{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .mtag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+  .mentor h3{font-size:20px;font-weight:600}
+  .mentor .role{font-size:14px;color:var(--lilac)}
+  .mentor p{font-size:14px;color:var(--lilac-2);margin-top:4px}
+  .guests{margin-top:20px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--white)}
+
+  /* curriculum tabs */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 22px}
+  .tab{background:transparent;border:1px solid rgba(255,255,255,.14);color:var(--lilac-2);border-radius:40px;padding:9px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .15s}
+  .tab:hover{border-color:var(--lilac)}
+  .tab[aria-selected="true"]{background:var(--lime);color:#0f1a12;border-color:var(--lime)}
+  .panel{display:none}
+  .panel[data-active="true"]{display:block}
+  .panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+  .panel-head h3{font-size:24px;font-weight:300}
+  .panel-head h3 em{font-family:var(--serif);font-style:italic}
+  .panel-head span{font-size:13px;color:var(--muted)}
+  .term-card{background:var(--panel);border-radius:var(--r);border:1px solid rgba(255,255,255,.1);padding:28px}
+  .term-card p{font-size:15px;color:var(--lilac-2);max-width:60ch}
+
+  /* outcomes */
+  .outcomes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+  @media (max-width:900px){.outcomes{grid-template-columns:minmax(0,1fr)}}
+  .olist{list-style:none;display:flex;flex-direction:column}
+  .olist li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:20px 0;border-top:1px solid rgba(255,255,255,.1)}
+  .olist li:last-child{border-bottom:1px solid rgba(255,255,255,.1)}
+  .olist .n{font-family:var(--serif);font-size:26px;color:var(--sage)}
+  .olist b{display:block;font-size:17px;margin-bottom:4px}
+  .olist span{font-size:14px;color:var(--lilac-2)}
+  .outcomes .ph{aspect-ratio:4/5;max-height:560px}
+  .note{margin-top:24px;font-size:14px;color:var(--muted);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px}
+  .note b{color:var(--lilac-2)}
+
+  /* admissions */
+  .adm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+  @media (max-width:900px){.adm{grid-template-columns:minmax(0,1fr)}}
+  .steps{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:24px;counter-reset:s}
+  .steps li{background:#fff;border:1px solid var(--cream-2);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+  .steps li::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--ink-green);color:var(--sage);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+  .steps b{display:block;color:var(--ink-green)}
+  .steps span{font-size:14px;color:var(--muted-cream)}
+  .elig{background:#fff;border:1px solid var(--cream-2);border-radius:14px;padding:20px 22px;margin-top:24px}
+  .elig ul{margin:8px 0 0 18px;font-size:14px;color:var(--muted-cream);display:flex;flex-direction:column;gap:6px}
+  .fees{width:100%;min-width:640px;border-collapse:collapse;font-size:14px;margin-top:24px;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--cream-2)}
+  .fees th{background:var(--ink-green);color:var(--sage);font-size:11px;letter-spacing:.12em;text-align:left;padding:14px 16px}
+  .fees td{border-top:1px solid var(--cream-2);color:var(--ink-green);padding:14px 16px}
+  .fees td.amt{font-variant-numeric:tabular-nums;font-weight:700}
+  .fees tr.early td{background:#eaf6ed}
+  .fees-wrap{overflow-x:auto}
+  .fn{font-size:12px;color:var(--muted-cream);margin-top:12px;max-width:none}
+  .deadline{display:inline-flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--ink-green);color:var(--sage);border-radius:40px;padding:8px 16px;font-size:13px;font-weight:700;margin-top:14px}
+  .fin{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  @media (max-width:540px){.fin{grid-template-columns:minmax(0,1fr)}}
+  .fin div{background:#fff;border:1px solid var(--cream-2);border-radius:14px;padding:18px}
+  .fin b{color:var(--ink-green);display:block;margin-bottom:4px}
+  .fin span{font-size:14px;color:var(--muted-cream)}
+  .scholarships{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
+  @media (max-width:760px){.scholarships{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:540px){.scholarships{grid-template-columns:minmax(0,1fr)}}
+  .scholarship{background:#fff;border:1px solid var(--cream-2);border-radius:14px;padding:18px}
+  .scholarship h3{font-size:16px;color:var(--ink-green);margin-bottom:8px}
+  .scholarship p{font-size:13px;color:var(--muted-cream)}
+
+  /* faq */
+  .faq{max-width:820px;margin-top:32px}
+  .faq details{border-top:1px solid rgba(255,255,255,.12)}
+  .faq details:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+  .faq summary{cursor:pointer;list-style:none;padding:22px 0;font-size:18px;font-weight:600;display:flex;justify-content:space-between;gap:20px;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:26px;font-weight:300;color:var(--lilac);flex-shrink:0}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{padding:0 0 22px;color:var(--lilac-2);font-size:15px;max-width:68ch}
+
+  /* final cta */
+  .final{padding:0 0 88px}
+  .final .box{border-radius:32px;background:var(--panel);border:1px solid rgba(255,255,255,.1);padding:72px 48px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center;position:relative;overflow:hidden}
+  @media (max-width:900px){.final .box{grid-template-columns:1fr;padding:48px 28px}}
+  .final h2{font-size:clamp(34px,5vw,58px);margin-bottom:12px}
+  .final p{color:var(--lilac-2)}
+  .final .ph{aspect-ratio:4/3}
+
+  footer{border-top:1px solid rgba(255,255,255,.08);padding:56px 0 32px;font-size:14px;color:var(--muted)}
+  .foot{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+  @media (max-width:900px){.foot{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:540px){.foot{grid-template-columns:minmax(0,1fr)}}
+  footer h4{color:var(--white);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  footer a:hover{color:var(--white)}
+  .copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">MESA <span>×</span> PGPx AI Systems</a>
+    <div class="nav-links">
+      <a href="#top">Program</a>
+      <a href="#who">Who it's for</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#faq">Chat with us</a>
+      <a class="btn btn-lime" href="#admissions">Apply now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">PGPx: AI Systems &amp; Business — for working software engineers</div>
+        <h1>This is the decade of the software <em>engineer.</em></h1>
+        <p class="lead">AI is making code faster and cheaper to produce. The engineers who win the next decade will know how to find the right problem, understand the customer, build fast — and take products to users and revenue. An 8-month, part-time builder program for software engineers who want to move from coding what they are asked to build to deciding what should be built.</p>
+        <div class="specs">
+          <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>8 months</div>
+          <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Part-time</div>
+          <div><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-5-6.3"/></svg>15 live weekends</div>
+          <div><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-10a6 6 0 0 1 12 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>6 Bengaluru hackathons</div>
+          <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>2-month product sprint</div>
+        </div>
+        <div class="pills">
+          <span class="pill">Builder-led</span>
+          <span class="pill">Learn by building</span>
+          <span class="pill">AI × Product × Business</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-lime" href="#admissions">Request founding cohort access</a>
+          <a class="btn btn-ghost" href="#video">Watch how it works</a>
+        </div>
+      </div>
+      <div class="collage" id="video" aria-label="Founder video">
+        <div class="ph video">
+          <svg class="play" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>
+          YouTube video: why we're betting on software engineers
+        </div>
+      </div>
+    </div>
+    <div class="logo-rows">
+      <div><div class="lbl">Built with guidance from</div><div class="row"><div class="ph logo">Harvard University</div><div class="ph logo">Kellogg School of Management</div></div></div>
+      <div><div class="lbl">Supported by operators from</div><div class="row"><div class="ph logo">emergent</div><div class="ph logo">Temple</div><div class="ph logo">Razorpay</div></div></div>
+      <div><div class="lbl">Backed by</div><div class="row"><div class="ph logo">Elevation Capital</div></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PROOF PILLARS ================= -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Program pillars</div>
+    <h2>Five things that define your <em>builder journey.</em></h2>
+    <p class="lead subhead">This is not a content-heavy AI course. It is a builder program for software engineers who want to own more than code.</p>
+    <div class="stats">
+      <div class="stat"><b>15</b><span>Live weekends: product thinking, customer discovery, AI workflows, distribution and sales — always tied to something you are building.</span></div>
+      <div class="stat"><b>6</b><span>Campus hackathons in Bengaluru: high-intensity build sprints where you solve real problems, ship fast and learn with peers.</span></div>
+      <div class="stat"><b>50<em>+</em></b><span>Customer conversations: talk to users, test assumptions, validate pain points, learn to build from the problem backwards.</span></div>
+      <div class="stat"><b>1</b><span>Product built from zero: use the final product sprint to choose a problem, build an MVP, launch it and iterate in the real world.</span></div>
+      <div class="stat"><b>20<em>+</em></b><span>VCs at Demo Day: present your product, your customer evidence and your traction to investors, founders and operators.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHO IS THIS FOR ================= -->
+<section class="light" id="who">
+  <div class="wrap">
+    <div class="eyebrow">Who is PGPx for?</div>
+    <h2>You already know how to build. Now learn to <em>own what gets built.</em></h2>
+    <p class="lead">Built for working engineers who want to move beyond technical execution into product, customer and business ownership — without stepping away from their careers.</p>
+    <div class="personas">
+      <div class="persona"><div class="ph">Software &amp; full-stack engineers</div><div class="body"><div class="num">01</div><h3>Software &amp; Full-Stack Engineers</h3><div class="subtitle">Move from tickets to problems.</div><p>You know how to ship. Now learn to understand customers, shape the product and decide what deserves to be built.</p></div></div>
+      <div class="persona"><div class="ph">Backend, cloud &amp; platform engineers</div><div class="body"><div class="num">02</div><h3>Backend, Cloud &amp; Platform Engineers</h3><div class="subtitle">Take your systems thinking closer to the business.</div><p>Turn technical depth into stronger solutioning, product judgment and ownership of larger problems.</p></div></div>
+      <div class="persona"><div class="ph">Data, AI &amp; ML engineers</div><div class="body"><div class="num">03</div><h3>Data, AI &amp; ML Engineers</h3><div class="subtitle">Move from models to products people use.</div><p>Build customer discovery, MVP thinking, analytics, distribution and commercial judgment around your technical skills.</p></div></div>
+      <div class="persona"><div class="ph">Solutions &amp; high-agency technical builders</div><div class="body"><div class="num">04</div><h3>Solutions &amp; High-Agency Technical Builders</h3><div class="subtitle">Go from implementing solutions to creating them.</div><p>For solutions engineers, technical consultants and engineers who want to build products — or companies — from zero.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRAM EXPERIENCE ================= -->
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">The builder experience</div>
+    <h2>Six times, we throw you into the <em>deep end.</em></h2>
+    <p class="lead">You won't learn product, customers and sales through slides. You'll learn them while trying to build something real — for people who can ignore it, reject it or pay for it.</p>
+    <div class="builds">
+      <div class="build dark"><div class="ph">Find a problem worth solving</div><div class="body"><div class="tag">STEP 01</div><h3>Find a Problem Worth Solving</h3><p>Start with ambiguity. Talk to people. Break the problem down. Decide what is actually worth building.</p><div class="feel">"Nobody gives you the PRD."</div></div></div>
+      <div class="build dark"><div class="ph">Get customers to care</div><div class="body"><div class="tag">STEP 02</div><h3>Get Customers to Care</h3><p>Talk to users, test the pain and learn whether anyone actually wants the thing you're about to build.</p><div class="feel">"Your opinion doesn't count. Their behaviour does."</div></div></div>
+      <div class="build dark"><div class="ph">Ship before you feel ready</div><div class="body"><div class="tag">STEP 03</div><h3>Ship Before You Feel Ready</h3><p>Scope ruthlessly, use AI as leverage and get the MVP into real hands.</p><div class="feel">"Turn an insight into a working product — fast."</div></div></div>
+      <div class="build dark"><div class="ph">Watch what happens</div><div class="body"><div class="tag">STEP 04</div><h3>Watch What Happens</h3><p>Track behaviour, adoption and drop-offs. Let evidence — not ego — decide the next version.</p><div class="feel">"Users will destroy your assumptions. Good."</div></div></div>
+      <div class="build dark"><div class="ph">Make someone pay</div><div class="body"><div class="tag">STEP 05</div><h3>Make Someone Pay</h3><p>Find users. Create demand. Demo. Handle objections. Sell.</p><div class="feel">"Shipping is not the finish line."</div></div></div>
+      <div class="build dark"><div class="ph">Build your own company-grade product</div><div class="body"><div class="tag">STEP 06</div><h3>Build Your Own Company-Grade Product</h3><p>Go from zero → customers → product → users → traction → Demo Day.</p><div class="feel">"Two months. Your problem. Your product. Your shot."</div></div></div>
+    </div>
+    <div class="tagline">
+      <span>Find it.</span><span class="sep">·</span>
+      <span>Build it.</span><span class="sep">·</span>
+      <span>Launch it.</span><span class="sep">·</span>
+      <em>Sell it.</em><span class="sep">·</span>
+      <span>Get rejected.</span><span class="sep">·</span>
+      <span>Fix it.</span><span class="sep">·</span>
+      <em>Do it again.</em>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUPPORTERS ================= -->
+<section id="supporters">
+  <div class="wrap">
+    <div class="eyebrow">Who backs it</div>
+    <h2>Supporters and <em>investors.</em></h2>
+    <div class="scroller-head"><span class="scroller-count">6 named, and 50+ startup founders</span><div class="arrows"><button class="arrow" data-dir="-1" aria-label="Previous">←</button><button class="arrow" data-dir="1" aria-label="Next">→</button></div></div>
+    <div class="mentors" id="supportersScroller">
+      <div class="mentor"><div class="ph">Headshot, Kunal Shah</div><div class="mbody"><div class="mtag">CRED</div><h3>Kunal Shah</h3><div class="role">Cred Founder</div><p>Advisor · Sequoia Capital · Advisor AngelList · Avid Angel Investor</p></div></div>
+      <div class="mentor"><div class="ph">Headshot, Vidit Aatrey</div><div class="mbody"><div class="mtag">Meesho</div><h3>Vidit Aatrey</h3><div class="role">Meesho Founder</div><p>IIT Delhi · Ex-InMobi</p></div></div>
+      <div class="mentor"><div class="ph">Headshot, Vijay Shekhar</div><div class="mbody"><div class="mtag">Paytm</div><h3>Vijay Shekhar</h3><div class="role">Paytm Founder</div><p>Delhi College of Engineering · Avid Angel Investor</p></div></div>
+      <div class="mentor"><div class="ph">Headshot, Mekin M</div><div class="mbody"><div class="mtag">Udhyam</div><h3>Mekin M</h3><div class="role">Udhyam Founder</div><p>Ex-Flipkart · Avid Angel Investor</p></div></div>
+      <div class="mentor"><div class="ph">Headshot, Abhiraj Bhal</div><div class="mbody"><div class="mtag">Urban Company</div><h3>Abhiraj Bhal</h3><div class="role">Urban Company Founder</div><p>IIM Ahmedabad · IIT Kanpur</p></div></div>
+      <div class="mentor"><div class="ph">Headshot, Varun Khaitan</div><div class="mbody"><div class="mtag">Urban Company</div><h3>Varun Khaitan</h3><div class="role">Urban Company Founder</div><p>IIT Kanpur · Ex-BCG</p></div></div>
+    </div>
+    <p class="guests">...and 50+ startup founders</p>
+  </div>
+</section>
+
+<!-- ================= PROGRAM DETAILS + FEATURES ================= -->
+<section class="light" id="program-details">
+  <div class="wrap">
+    <div class="eyebrow">Program details</div>
+    <h2>PGP in <em>AI Systems &amp; Business.</em></h2>
+    <div class="chips">
+      <span class="chip">12 months</span>
+      <span class="chip">Full-Time, Residential</span>
+      <span class="chip">Aug 2027 intake</span>
+      <span class="chip">Bangalore</span>
+    </div>
+    <div class="btn-row" style="margin-top:24px"><a class="btn btn-lime" href="#admissions">Apply now</a></div>
+    <div class="why">
+      <div class="feature"><span class="num">1</span><h3>New-age <em>academics</em></h3><p>Learn new-age skills like growth, product, AI agents and venture capital from world-renowned experts, unicorn founders, VCs and professors from top universities.</p></div>
+      <div class="feature"><span class="num">2</span><h3>Learn directly <em>from Founders</em></h3><p>100+ startup founders visit the campus and teach you during your 12 months. Ask questions, network and stand a chance to get follow-up meetings.</p></div>
+      <div class="feature"><span class="num">3</span><h3>AI &amp; <em>product focus</em></h3><p>Learn 25+ AI tools, get mentored by top AI product managers, and build 3 real AI products — launch on Product Hunt and get 100 loyal customers in 3–4 weeks.</p></div>
+      <div class="feature"><span class="num">4</span><h3>In-house <em>Incubator</em></h3><p>Get access to a ₹5 Cr in-house fund, mentorship from 100+ startup founders, and an opportunity to pitch to 50+ of India's largest VCs.</p></div>
+      <div class="feature"><span class="num">5</span><h3>Learn sales <em>by doing sales</em></h3><p>Do ₹1L in sales during your first 4 weeks at Mesa — flea stalls, tele-calling and door-to-door sales to understand the art firsthand.</p></div>
+      <div class="feature"><span class="num">6</span><h3>Structured <em>career prep</em></h3><p>250+ hours of focused career prep based on ambition, past work experience, interests and abilities — behind an average 25L+ CTC outcome.</p></div>
+    </div>
+    <p class="fn" style="max-width:70ch">Note: these six pillars describe Mesa's flagship PG curriculum and are shared across PG program pages — see the AI-specific curriculum below for what's unique to this track.</p>
+  </div>
+</section>
+
+<!-- ================= LIFE AT MESA ================= -->
+<section id="life">
+  <div class="wrap">
+    <div class="eyebrow">Sneak peek</div>
+    <h2>Life at <em>Mesa.</em></h2>
+    <p class="lead">A glimpse into the founders, faculty and moments that shape the Mesa experience.</p>
+    <div class="hacks">
+      <div class="hack">
+        <div class="ph">Shark Tank India still, EverRaw pitch</div>
+        <div class="body">
+          <div class="num">Shark Tank India · Cohort 1</div>
+          <h3>EverRaw Foods</h3>
+          <p>What started as an idea at Mesa became EverRaw — a spreads brand that hit ₹2.5 lakh in revenue within 10 weeks on campus, reaching 500 customers through Mesa's BYOB sprint.</p>
+          <div class="out">Lucky then took it to the biggest stage — pitching EverRaw on Shark Tank India Season 5.</div>
+        </div>
+      </div>
+      <div class="hack">
+        <div class="ph">Convocation photo, Ghazal Alagh</div>
+        <div class="body">
+          <div class="num">Convocation · Mamaearth</div>
+          <h3>Ghazal Alagh</h3>
+          <p>Ghazal joined as guest of honor for Cohort 2's convocation. Students pitched their ventures live — 2 businesses from Mesa Startup Lab earned follow-ups with her team.</p>
+          <div class="out">Several students came away with hiring opportunities.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRONG ALUMNI BASE ================= -->
+<section id="alumni">
+  <div class="wrap">
+    <div class="eyebrow">Strong alumni base</div>
+    <h2>Alumni raising capital, <em>leading teams.</em></h2>
+    <p class="lead">Entrepreneurs who have raised capital, and leaders working directly with founders in fast-growing startups.</p>
+    <div class="scroller-head"><span class="scroller-count">12 alumni</span><div class="arrows"><button class="arrow" data-dir="-1" aria-label="Previous">←</button><button class="arrow" data-dir="1" aria-label="Next">→</button></div></div>
+    <div class="mentors" id="alumniScroller">
+      <div class="mentor"><div class="ph">Headshot, Sanchit Madhura</div><div class="mbody"><div class="mtag">Batch of 2025</div><h3>Sanchit Madhura</h3><div class="role">Chief of Staff, Epigamia</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Arvind Girish</div><div class="mbody"><div class="mtag">Batch of 2025</div><h3>Arvind Girish</h3><div class="role">Product Strategist, Zomato</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Harshit Maheshwari</div><div class="mbody"><div class="mtag">Batch of 2024</div><h3>Harshit Maheshwari</h3><div class="role">AI Product Manager, SambaNova</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Ruheen Singh</div><div class="mbody"><div class="mtag">Batch of 2024</div><h3>Ruheen Singh</h3><div class="role">Growth Manager, Scapia</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Richa Pherwani</div><div class="mbody"><div class="mtag">Batch of 2025</div><h3>Richa Pherwani</h3><div class="role">Marketing Lead, Comet</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Piyush Verma</div><div class="mbody"><div class="mtag">Batch of 2024</div><h3>Piyush Verma</h3><div class="role">Category Manager, Hyperpure by Zomato</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Varun Bali</div><div class="mbody"><div class="mtag">Batch of 2024</div><h3>Varun Bali</h3><div class="role">Founder's Office, Swipe</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Atishay Nijhawan</div><div class="mbody"><div class="mtag">Batch of 2025</div><h3>Atishay Nijhawan</h3><div class="role">Senior Manager, Blue Tokai Coffee Roasters</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Akshita Rajput</div><div class="mbody"><div class="mtag">Batch of 2024</div><h3>Akshita Rajput</h3><div class="role">Head of Operations, BPR Hub</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Adarsh Iyer</div><div class="mbody"><div class="mtag">Batch of 2025</div><h3>Adarsh Iyer</h3><div class="role">Founder's Office, Culture</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Neha Moda</div><div class="mbody"><div class="mtag">Batch of 2024</div><h3>Neha Moda</h3><div class="role">Senior Manager, Zepto</div></div></div>
+      <div class="mentor"><div class="ph">Headshot, Chaitanya Sawhney</div><div class="mbody"><div class="mtag">Batch of 2025</div><h3>Chaitanya Sawhney</h3><div class="role">Entrepreneur in Residence, NOTO Ice Cream and Desserts</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE PROFESSORS ================= -->
+<section class="light" id="professors">
+  <div class="wrap">
+    <div class="eyebrow">Marquee professors</div>
+    <h2>Taught by <em>practitioners.</em></h2>
+    <p class="lead">A peek into our most-loved courses, taught by well-acclaimed professors from across the globe.</p>
+    <div class="personas">
+      <div class="persona"><h3>Operations Management</h3><div class="subtitle">by Achal Bassamboo</div><p>Professor of Decision Sciences &amp; Operations at Northwestern University, Kellogg. Learn to design processes that scale, machines that run themselves, and keep your business always a step ahead.</p><p style="font-size:12px;font-weight:700;color:var(--ink-green)">Northwestern Kellogg · Stanford University</p></div>
+      <div class="persona"><h3>Associate Chair of Marketing</h3><div class="subtitle">by Tim Calkins</div><p>Kellogg School of Management, Northwestern University. Learn how iconic brands are built: from finding their voice to dominating their category.</p><p style="font-size:12px;font-weight:700;color:var(--ink-green)">Northwestern Kellogg · Harvard Business School</p></div>
+      <div class="persona"><h3>Digital Marketing &amp; Strategy</h3><div class="subtitle">by Siddarth Menon</div><p>Marketing &amp; Strategy Consultant, Ex-CMO Drums Food International. Learn to design and run digital campaigns that convert, using real data from brands like CRED and Epigamia.</p><p style="font-size:12px;font-weight:700;color:var(--ink-green)">Coca-Cola · Colgate · Epigamia</p></div>
+      <div class="persona"><h3>Entrepreneurial Finance</h3><div class="subtitle">by Prof. Sundar Venkatesh</div><p>Educator &amp; learning consultant working with startups, enterprises and universities across Southeast Asia. Learn to analyze financial data, plan strategically, and make informed business decisions.</p><p style="font-size:12px;font-weight:700;color:var(--ink-green)">IIMB · Shiv Nadar University · AIT</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURE BANNERS ================= -->
+<section>
+  <div class="wrap">
+    <div class="demo">
+      <div>
+        <div class="eyebrow">AI &amp; product focus</div>
+        <h2>Build real AI products, launch on Product Hunt and get 100 paying customers.</h2>
+        <div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:24px">
+          <div class="stat"><b>150</b><span>Hours of AI curriculum, from no-code to fine-tuning</span></div>
+          <div class="stat"><b>25<em>+</em></b><span>AI tools you will gain expertise in</span></div>
+          <div class="stat"><b>—</b><span>Build automation agents: automating startup workflows</span></div>
+          <div class="stat"><b>—</b><span>Product building blocks: learn UI, APIs and databases</span></div>
+        </div>
+        <div class="demo-speaker"><b>Varun Limaye</b>Co-Founder, Mesa</div>
+        <div class="btn-row"><a class="btn btn-lime" href="#admissions">Apply now</a></div>
+      </div>
+      <div class="ph">Speaker photo, Varun Limaye on campus</div>
+    </div>
+
+    <div class="demo">
+      <div class="ph">Campus photo, in-house incubator</div>
+      <div>
+        <div class="eyebrow">In-house incubator</div>
+        <h2>Build your own startup and get incubated at Mesa.</h2>
+        <div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:24px">
+          <div class="stat"><b>₹5 Cr</b><span>Startup fund to get funding to launch ventures</span></div>
+          <div class="stat"><b>1:1</b><span>Founder mentorship, directly from 100+ startup leaders</span></div>
+          <div class="stat"><b>—</b><span>Pitch to the top VCs: present to 50+ investors</span></div>
+          <div class="stat"><b>—</b><span>Guided startup journey: 0-1 with structured mentorship</span></div>
+        </div>
+        <div class="demo-speaker"><b>Sajith Pai</b>Partner, Blume</div>
+        <div class="btn-row"><a class="btn btn-lime" href="#admissions">Apply now</a></div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div>
+        <div class="eyebrow">Structured career preparation</div>
+        <h2>Get ready for a powerful career in startups.</h2>
+        <div class="stats" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:24px">
+          <div class="stat"><b>250<em>+</em></b><span>Hours of career support, including networking and training</span></div>
+          <div class="stat"><b>—</b><span>Startup internships: 3-month roles in fast-growing companies</span></div>
+          <div class="stat"><b>—</b><span>High-growth career paths in Founder's Office, Product, VC</span></div>
+          <div class="stat"><b>100<em>+</em></b><span>Mock interviews with startup leaders for interview readiness</span></div>
+        </div>
+        <div class="demo-speaker"><b>Shamika Haldipurkar</b>Founder, d'you</div>
+        <div class="btn-row"><a class="btn btn-lime" href="#admissions">Apply now</a></div>
+      </div>
+      <div class="ph">Speaker photo, Shamika Haldipurkar</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CURRICULUM ================= -->
+<section class="light" id="curriculum">
+  <div class="wrap">
+    <div class="eyebrow">Term by term</div>
+    <h2>AI curriculum, <em>offered to Cohort 4.</em></h2>
+    <p class="lead">Seven terms, each building on the last — from no-code foundations to shipping your own AI system.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-p="t1">Term 1</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="t2">Term 2</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="t3">Term 3</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="t4">Term 4</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="t5">Term 5</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="t6">Term 6</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="t7">Term 7</button>
+    </div>
+
+    <div class="panel" id="t1" data-active="true"><div class="term-card"><div class="panel-head"><h3>Term 1 · <em>Foundations</em></h3></div><p>Foundations of AI &amp; No-Code Product Building.</p></div></div>
+    <div class="panel" id="t2"><div class="term-card"><div class="panel-head"><h3>Term 2 · <em>Multimodal</em></h3></div><p>Voice, Multimodal, and Agentic AI Products.</p></div></div>
+    <div class="panel" id="t3"><div class="term-card"><div class="panel-head"><h3>Term 3 · <em>Vertical AI</em></h3></div><p>Vertical AI Products + Automation + Vibe Coding.</p></div></div>
+    <div class="panel" id="t4"><div class="term-card"><div class="panel-head"><h3>Term 4 · <em>Fine-Tuning</em></h3></div><p>Fine-Tuning &amp; Open Source AI Productization.</p></div></div>
+    <div class="panel" id="t5"><div class="term-card"><div class="panel-head"><h3>Term 5 · <em>Agents</em></h3></div><p>Building the AI Agents of the Future.</p></div></div>
+    <div class="panel" id="t6"><div class="term-card"><div class="panel-head"><h3>Term 6 · <em>Scale</em></h3></div><p>Scaling Products &amp; Building AI Systems.</p></div></div>
+    <div class="panel" id="t7"><div class="term-card"><div class="panel-head"><h3>Term 7 · <em>Thesis</em></h3></div><p>Thesis — Solve a Real Problem with AI.</p></div></div>
+
+    <div style="margin-top:40px">
+      <div class="eyebrow">Tools</div>
+      <div class="chips">
+        <span class="chip">Make</span><span class="chip">OpenAI</span><span class="chip">Canva</span><span class="chip">Zapier</span>
+        <span class="chip">Typedream</span><span class="chip">Airtable</span><span class="chip">Descript</span><span class="chip">Notion</span>
+      </div>
+    </div>
+    <div style="margin-top:32px">
+      <div class="eyebrow">Techniques</div>
+      <div class="chips">
+        <span class="chip">Prompt Engineering 101</span><span class="chip">Reading API Docs</span>
+        <span class="chip">Voice transcription &amp; synthesis</span><span class="chip">No-code app deployment</span>
+      </div>
+    </div>
+    <div class="btn-row"><a class="btn btn-white" href="#admissions">Download full curriculum</a><a class="btn btn-ghost" href="#admissions">Apply now</a></div>
+  </div>
+</section>
+
+<!-- ================= OUTCOMES ================= -->
+<section id="outcomes">
+  <div class="wrap outcomes">
+    <div>
+      <div class="eyebrow">What's permanent</div>
+      <h2>Outcomes <em>you can expect.</em></h2>
+      <ul class="olist">
+        <li><span class="n">i</span><div><b>26L average CTC</b><span>Across the Mesa PG cohort, with a 2.8X average CTC jump from pre-program roles.</span></div></li>
+        <li><span class="n">ii</span><div><b>45L highest CTC</b><span>The strongest individual outcomes from recent cohorts.</span></div></li>
+        <li><span class="n">iii</span><div><b>70+ hiring partners</b><span>Startups and companies that actively recruit from Mesa cohorts.</span></div></li>
+        <li><span class="n">iv</span><div><b>100% placement rate</b><span>Backed by 58% of graduates landing founder-facing roles.</span></div></li>
+      </ul>
+      <div class="btn-row"><a class="btn btn-ghost" href="#">Learn more</a><a class="btn btn-lime" href="#">Download placement report</a></div>
+      <div class="note"><b>The Economic Times:</b> "New-age B-school report highlights strong startup placements and early offers." Mesa School of Business, a startup-focused, AI-first institution backed by Elevation Capital, has released independently audited placement outcomes showing an average CTC of ₹26 lakh for its first two cohorts, with 60% of graduates in founder-facing roles and a 2.8x average salary jump.</div>
+      <div class="note">Outcomes here aren't just placements; they're measured by the responsibility you earn through founder-facing roles, real ownership, and the ability to make decisions that move a business.</div>
+    </div>
+    <div class="ph">Founders on stage, career outcomes moment</div>
+  </div>
+</section>
+
+<!-- ================= ADMISSIONS ================= -->
+<section class="light" id="admissions">
+  <div class="wrap">
+    <div class="eyebrow">Admissions</div>
+    <h2>Admissions for the PGP in <em>AI Systems &amp; Business.</em></h2>
+    <div class="deadline">Final Deadline: Oct 4, 2026 · Cohort begins Aug 2027 · Bangalore</div>
+    <div class="adm" style="margin-top:24px">
+      <div>
+        <div class="elig"><b style="color:var(--ink-green)">Eligibility</b><ul>
+          <li><b>Education:</b> a bachelor's degree in any discipline</li>
+          <li><b>Professional experience:</b> 1+ year of work experience in any domain</li>
+        </ul></div>
+        <ol class="steps">
+          <li><div><b>Take the Mesa Admissions Test (MAT)</b><span>Designed to evaluate like a Founders' Office interview, the MAT holistically tests candidates across aptitude, business acumen, first-principles thinking, ability to sell &amp; more.</span></div></li>
+          <li><div><b>Submit your application</b><span>Upload an updated 1-pager resume &amp; fill in your basic details to complete your application.</span></div></li>
+          <li><div><b>Interview with our Admissions Panel</b><span>Shortlisted candidates book their interview slot (charged at ₹1,500). Two stages: screening &amp; case evaluations, then group discussions and conversations with Mesa Leadership.</span></div></li>
+          <li><div><b>Receive the verdict</b><span>Within 10 working days of your last interview: selected, waitlisted, or rejected. Waitlisted candidates hear back at the end of the admissions round.</span></div></li>
+        </ol>
+      </div>
+      <div>
+        <b style="color:var(--ink-green)">Key dates and fees</b>
+        <div class="fees-wrap"><table class="fees">
+          <thead><tr><th>Round</th><th>Deadline</th><th>Interviews</th><th>Application fee</th><th>Course fee</th></tr></thead>
+          <tbody>
+            <tr class="early"><td>Early Bird</td><td>Oct 4, 2026</td><td>November 2026</td><td>Free</td><td class="amt">₹23,95,000</td></tr>
+            <tr><td>Round 1</td><td>Dec 27, 2026</td><td>January 2027</td><td>Free</td><td class="amt">₹24,35,000</td></tr>
+            <tr><td>Round 2</td><td>Feb 28, 2027</td><td>March 2027</td><td>Free</td><td class="amt">₹24,35,000</td></tr>
+            <tr><td>Round 3</td><td>May 2, 2027</td><td>May 2027</td><td>Free</td><td class="amt">₹24,35,000</td></tr>
+            <tr><td>Round 4</td><td>Jul 31, 2027</td><td>Jul–Aug 2027</td><td>Free</td><td class="amt">₹24,35,000</td></tr>
+          </tbody></table></div>
+        <p class="fn">The final round closes immediately after seats are filled. Seats are typically 80% full by the end of Round 2. Fee amounts are exclusive of applicable 18% GST and accommodation expenses. Shortlisted candidates invited to interview book their slot with a ₹1,500 processing fee.</p>
+        <div class="fin">
+          <div><b>Financing</b><span>Various financing options, each designed with flexibility and convenience in mind, so you can focus on your studies without financial worry.</span></div>
+          <div><b>Loan partners</b><span>Once offered a seat, gain access to Mesa's loan partners for short &amp; long-term loans covering 100% of tuition &amp; accommodation fees, with up to 12 years' tenure.</span></div>
+        </div>
+        <div class="btn-row"><a class="btn btn-lime" href="#">Apply now</a><a class="btn btn-ghost" href="#">Talk to admissions</a></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:64px">Scholarships</h2>
+    <p class="lead">The Mesa cohort comprises exceptional &amp; diverse candidates. We're committed to eliminating financial barriers for outstanding candidates, guaranteeing an unparalleled peer learning experience.</p>
+    <div class="scholarships">
+      <div class="scholarship"><h3>Underdog Scholarship</h3><p>For applicants who feel they lack a big-brand university or employer.</p></div>
+      <div class="scholarship"><h3>Trailblaz-her Scholarship</h3><p>For women who have demonstrated leadership abilities or founded their own venture.</p></div>
+      <div class="scholarship"><h3>Bob the Builder Scholarship</h3><p>For ex-founders who want to continue building in startups.</p></div>
+      <div class="scholarship"><h3>Merit-Based Scholarship</h3><p>For applicants with exceptional academic performance, test scores, or professional accomplishments.</p></div>
+      <div class="scholarship"><h3>Sherdil Scholarship</h3><p>For veterans (&lt;10 years of experience) keen to transition into startup leadership.</p></div>
+      <div class="scholarship"><h3>Bharat Builder Scholarship</h3><p>For applicants who have built at grassroots levels in non-profit or impact organizations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <h2>Frequently asked <em>questions</em></h2>
+    <div class="faq">
+      <details><summary>Is this a technical program?</summary><p>Yes. You'll write code, work with APIs and databases, deploy to the cloud, and debug your own systems. You'll also spend real time on the business side — because a system nobody uses isn't a win, no matter how well it's built.<br><br>You don't need an engineering degree to apply. You do need to be genuinely willing to get technical.</p></details>
+      <details><summary>Do I need to know how to code before joining?</summary><p>No. But get ready to vibe code — building with AI coding tools — from early on.<br><br>If you're already an engineer, you'll start a step ahead of someone coming from consulting or operations, and the program accounts for that. Either way, by graduation everyone hits the same bar: you can build and modify applications, work with APIs and data, understand how an AI system fits together, debug common failures, and hold your own with engineers.</p></details>
+      <details><summary>Are there specializations or tracks?</summary><p>Yes, three. You earn your way into a track after a common core, based on your background and how you perform in the program — not just on what you'd prefer.<br><br>• AI Deployment and Engineering — FDE, AI Solutions Engineer, Applied AI, AI Implementation. The highest engineering bar of the three.<br><br>• AI GTM Engineering — GTM Engineer, Growth Engineer, AI Generalist, Technical GTM, revenue and workflow automation.<br><br>• AI Product — AI PM, Technical PM, AI APM, AI Product Ops. Best fit if you're coming in with prior product or technical context.</p></details>
+      <details><summary>Will I actually work on real company problems?</summary><p>Yes — this is core to the program, building on Mesa's existing live-company work model. You won't just analyze a problem or write up a recommendation; you'll build and deploy something against it. That means dealing with everything a classroom project lets you skip: messy data, existing systems, real users, security, reliability, cost, adoption, and requirements that change halfway through.</p></details>
+      <details><summary>What should I be able to show an employer by placement season?</summary><p>Not five disconnected side projects. For the role you're targeting, you want a small number of pieces of work that are hard to argue with — each one answering:<br><br>• What was the problem, and who had it?<br>• What did you build, and why those technical choices?<br>• What broke, and how did you fix and improve it?<br>• Did anyone actually use it?<br>• What changed after it went live?</p></details>
+      <details><summary>What roles am I being prepared for?</summary><p>A family of AI-native roles, not one job title — because the engineering bar shifts a lot depending on the employer and your own background.<br><br>• AI Deployment and Solutions: FDE, AI Solutions Engineer, AI Implementation, Applied AI<br>• AI GTM: GTM Engineer, Growth Engineer, AI Generalist, Technical GTM, automation and RevOps roles<br>• AI Product: AI PM, Technical PM, AI APM, AI Product Ops<br><br>Titles will keep shifting. What we're building in you is the underlying capability.</p></details>
+      <details><summary>Does my track lock me out of other roles?</summary><p>Not really. Your track gives you extra depth in one direction, but you can still go after adjacent roles if your proof-of-work backs you up. That adjacency is deliberate — it's your safety net if your first role isn't your final one.</p></details>
+      <details><summary>Who's actually hiring for these roles?</summary><p>AI-native startups, SaaS companies weaving AI into their products, large tech companies, GCCs building internal AI capability, consulting and implementation firms, and enterprises standing up their own AI teams.</p></details>
+      <details><summary>What if I stumble onto a startup idea during the program?</summary><p>Go for it. If a real deployment surfaces a problem that shows up across multiple companies, Mesa Startup Lab gives you an existing path into venture building, founder feedback, and investor access.</p></details>
+      <details><summary>Will I need to do another Mesa PG program after this?</summary><p>No. This is a standalone career transition program, not a stepping stone to Startup Leadership.<br><br>If you already know you want an AI-native career, the point is to start building it now. If you'd rather build broad operating context first and keep your options open, Startup Leadership might make more sense for you.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <h2>This is the decade of the software <em>engineer.</em></h2>
+        <p class="lead">8 months, part-time. Founding cohort starts Aug 2027 in Bangalore. If it feels right, apply.</p>
+        <div class="btn-row"><a class="btn btn-lime" href="#admissions">Request founding cohort access</a><a class="btn btn-ghost" href="#faq">Chat with us</a></div>
+      </div>
+      <div class="ph">Campus exterior / evening wide shot</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><div class="logo" style="margin-bottom:14px">MESA</div><p>Mesa School of Business<br>WeWork, Bannerghatta Road, Bengaluru 560076<br>info@mesaschool.co</p></div>
+      <div><h4>Programs</h4><ul><li><a href="#">PG Program</a></li><li><a href="#">UG Program</a></li><li><a href="#top">PGPx: AI Systems &amp; Business</a></li><li><a href="#">Online Programs</a></li></ul></div>
+      <div><h4>More</h4><ul><li><a href="#">Outcomes</a></li><li><a href="#">Incubation</a></li><li><a href="#alumni">Alumni Directory</a></li><li><a href="#professors">Faculty</a></li></ul></div>
+      <div><h4>PGPx AI Systems</h4><ul><li><a href="#curriculum">Curriculum</a></li><li><a href="#who">Who it's for</a></li><li><a href="#admissions">Admissions</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© 2026 Mesa School of Business</span><span><a href="#">Terms of use</a> · <a href="#">Privacy policy</a></span></div>
+  </div>
+</footer>
+
+<script>
+  // Curriculum term tabs — same interaction as the Ascend page's curriculum tabs.
+  (function(){
+    var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+    tabs.forEach(function(t){t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.setAttribute('aria-selected','false')});
+      panels.forEach(function(p){p.removeAttribute('data-active')});
+      t.setAttribute('aria-selected','true');
+      document.getElementById(t.dataset.p).setAttribute('data-active','true');
+    })});
+  })();
+  // Horizontal scrollers (Supporters, Alumni) — each arrow pair drives the
+  // .mentors list that follows its own .scroller-head, so multiple
+  // scrollers on one page work independently.
+  (function(){
+    document.querySelectorAll('.scroller-head').forEach(function(head){
+      var scroller = head.nextElementSibling;
+      if (!scroller || !scroller.classList.contains('mentors')) return;
+      head.querySelectorAll('.arrow').forEach(function(a){
+        a.addEventListener('click',function(){
+          scroller.scrollBy({left:(parseInt(a.dataset.dir))*320,behavior:'smooth'});
+        });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
