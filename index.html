@@ -126,7 +126,8 @@
   @media (max-width:900px){.builds{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media (max-width:540px){.builds{grid-template-columns:minmax(0,1fr)}}
   .build{background:#fff;border:1px solid var(--cream-2);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-  .build .ph{height:170px;border-radius:0;border-width:0 0 2px 0}
+  .build .ph{height:170px;border-radius:0;border-width:0 0 2px 0;padding:0}
+  .build .ph img{width:100%;height:100%;object-fit:cover;display:block}
   .build .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
   .build .tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.12em;color:var(--green);font-weight:700}
   .build h3{color:var(--ink-green);font-size:19px}
@@ -196,12 +197,20 @@
   .mentors::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
   .mentor{flex:0 0 300px;scroll-snap-align:start;background:var(--panel);border-radius:24px;border:1px solid rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column}
   @media (max-width:540px){.mentor{flex-basis:84vw}}
-  .mentor > .ph{height:260px;border-radius:0;border-width:0 0 2px 0}
+  .mentor > .ph{height:260px;border-radius:0;border-width:0 0 2px 0;padding:0}
+  .mentor > .ph img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
   .mbody{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
   .mtag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
   .mentor h3{font-size:20px;font-weight:600}
   .mentor .role{font-size:14px;color:var(--lilac)}
   .mentor p{font-size:14px;color:var(--lilac-2);margin-top:4px}
+  #mentors .mentor{flex-basis:340px}
+  #mentors .mentor > .ph{height:360px}
+  .mlogo{margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+  .mlogo-txt{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--lilac);background:rgba(255,255,255,.08);border-radius:6px;padding:5px 9px}
+  .mlogo img{height:44px;width:44px;object-fit:cover;background:#fff;border-radius:10px;padding:0;display:block}
+  .guest-strip{margin-top:36px}
+  .guest-strip .tools-lbl{margin-top:0}
   .guests{margin-top:20px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--white)}
 
   /* curriculum tabs */
@@ -212,13 +221,14 @@
   .panel{display:none}
   .panel[data-active="true"]{display:block}
   .panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:16px}
-  .panel-head h3{font-size:24px;font-weight:300}
+  .panel-head h3{font-size:24px;font-weight:300;color:var(--white)}
   .panel-head h3 em{font-family:var(--serif);font-style:italic}
   .panel-head span{font-size:13px;color:var(--muted)}
   .term-card{background:var(--panel);border-radius:var(--r);border:1px solid rgba(255,255,255,.1);padding:28px}
   .term-card p{font-size:15px;color:var(--lilac-2);max-width:60ch}
   .term-card .quote{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--white);margin-bottom:14px}
   .term-card .skills{font-size:13px;color:var(--lilac);margin:14px 0 0}
+  .term-card .chip{background:rgba(255,255,255,.12);color:var(--lilac)}
 
   /* month panel: master/do lists, tools, pressure test, "I can now" */
   .mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:22px}
@@ -417,12 +427,12 @@
     <h2>Six times, we throw you into the <em>deep end.</em></h2>
     <p class="lead">You won't learn product, customers and sales through slides. You'll learn them while trying to build something real — for people who can ignore it, reject it or pay for it.</p>
     <div class="builds">
-      <div class="build dark"><div class="ph">Find a problem worth solving</div><div class="body"><div class="tag">STEP 01</div><h3>Find a Problem Worth Solving</h3><p>Start with ambiguity. Talk to people. Break the problem down. Decide what is actually worth building.</p><div class="feel">"Nobody gives you the PRD."</div></div></div>
-      <div class="build dark"><div class="ph">Get customers to care</div><div class="body"><div class="tag">STEP 02</div><h3>Get Customers to Care</h3><p>Talk to users, test the pain and learn whether anyone actually wants the thing you're about to build.</p><div class="feel">"Your opinion doesn't count. Their behaviour does."</div></div></div>
-      <div class="build dark"><div class="ph">Ship before you feel ready</div><div class="body"><div class="tag">STEP 03</div><h3>Ship Before You Feel Ready</h3><p>Scope ruthlessly, use AI as leverage and get the MVP into real hands.</p><div class="feel">"Turn an insight into a working product — fast."</div></div></div>
-      <div class="build dark"><div class="ph">Watch what happens</div><div class="body"><div class="tag">STEP 04</div><h3>Watch What Happens</h3><p>Track behaviour, adoption and drop-offs. Let evidence — not ego — decide the next version.</p><div class="feel">"Users will destroy your assumptions. Good."</div></div></div>
-      <div class="build dark"><div class="ph">Make someone pay</div><div class="body"><div class="tag">STEP 05</div><h3>Make Someone Pay</h3><p>Find users. Create demand. Demo. Handle objections. Sell.</p><div class="feel">"Shipping is not the finish line."</div></div></div>
-      <div class="build dark"><div class="ph">Build your own company-grade product</div><div class="body"><div class="tag">STEP 06</div><h3>Build Your Own Company-Grade Product</h3><p>Go from zero → customers → product → users → traction → Demo Day.</p><div class="feel">"Two months. Your problem. Your product. Your shot."</div></div></div>
+      <div class="build dark"><div class="ph"><img src="images/experience-find-problem.jpg" alt="Team whiteboarding to find a problem worth solving" loading="lazy" decoding="async"></div><div class="body"><div class="tag">STEP 01</div><h3>Find a Problem Worth Solving</h3><p>Start with ambiguity. Talk to people. Break the problem down. Decide what is actually worth building.</p><div class="feel">"Nobody gives you the PRD."</div></div></div>
+      <div class="build dark"><div class="ph"><img src="images/experience-get-customers.jpg" alt="Talking to customers over a product tasting table" loading="lazy" decoding="async"></div><div class="body"><div class="tag">STEP 02</div><h3>Get Customers to Care</h3><p>Talk to users, test the pain and learn whether anyone actually wants the thing you're about to build.</p><div class="feel">"Your opinion doesn't count. Their behaviour does."</div></div></div>
+      <div class="build dark"><div class="ph"><img src="images/who-solutions-builders.jpg" alt="Two builders deciding fast, laptop in hand" loading="lazy" decoding="async"></div><div class="body"><div class="tag">STEP 03</div><h3>Ship Before You Feel Ready</h3><p>Scope ruthlessly, use AI as leverage and get the MVP into real hands.</p><div class="feel">"Turn an insight into a working product — fast."</div></div></div>
+      <div class="build dark"><div class="ph"><img src="images/who-data-ai-ml.jpg" alt="Team reviewing dashboards to watch what happens" loading="lazy" decoding="async"></div><div class="body"><div class="tag">STEP 04</div><h3>Watch What Happens</h3><p>Track behaviour, adoption and drop-offs. Let evidence — not ego — decide the next version.</p><div class="feel">"Users will destroy your assumptions. Good."</div></div></div>
+      <div class="build dark"><div class="ph"><img src="images/experience-make-someone-pay.jpg" alt="Founder pitching on stage at Demo Day" loading="lazy" decoding="async"></div><div class="body"><div class="tag">STEP 05</div><h3>Make Someone Pay</h3><p>Find users. Create demand. Demo. Handle objections. Sell.</p><div class="feel">"Shipping is not the finish line."</div></div></div>
+      <div class="build dark"><div class="ph"><img src="images/experience-build-company-grade.jpg" alt="Builders heads-down building their company-grade product" loading="lazy" decoding="async"></div><div class="body"><div class="tag">STEP 06</div><h3>Build Your Own Company-Grade Product</h3><p>Go from zero → customers → product → users → traction → Demo Day.</p><div class="feel">"Two months. Your problem. Your product. Your shot."</div></div></div>
     </div>
     <div class="tagline">
       <span>Find it.</span><span class="sep">·</span>
@@ -443,12 +453,12 @@
     <h2>Supporters and <em>investors.</em></h2>
     <div class="scroller-head"><span class="scroller-count">6 named, and 50+ startup founders</span><div class="arrows"><button class="arrow" data-dir="-1" aria-label="Previous">←</button><button class="arrow" data-dir="1" aria-label="Next">→</button></div></div>
     <div class="mentors" id="supportersScroller">
-      <div class="mentor"><div class="ph">Headshot, Kunal Shah</div><div class="mbody"><div class="mtag">CRED</div><h3>Kunal Shah</h3><div class="role">Cred Founder</div><p>Advisor · Sequoia Capital · Advisor AngelList · Avid Angel Investor</p></div></div>
-      <div class="mentor"><div class="ph">Headshot, Vidit Aatrey</div><div class="mbody"><div class="mtag">Meesho</div><h3>Vidit Aatrey</h3><div class="role">Meesho Founder</div><p>IIT Delhi · Ex-InMobi</p></div></div>
-      <div class="mentor"><div class="ph">Headshot, Vijay Shekhar</div><div class="mbody"><div class="mtag">Paytm</div><h3>Vijay Shekhar</h3><div class="role">Paytm Founder</div><p>Delhi College of Engineering · Avid Angel Investor</p></div></div>
-      <div class="mentor"><div class="ph">Headshot, Mekin M</div><div class="mbody"><div class="mtag">Udhyam</div><h3>Mekin M</h3><div class="role">Udhyam Founder</div><p>Ex-Flipkart · Avid Angel Investor</p></div></div>
-      <div class="mentor"><div class="ph">Headshot, Abhiraj Bhal</div><div class="mbody"><div class="mtag">Urban Company</div><h3>Abhiraj Bhal</h3><div class="role">Urban Company Founder</div><p>IIM Ahmedabad · IIT Kanpur</p></div></div>
-      <div class="mentor"><div class="ph">Headshot, Varun Khaitan</div><div class="mbody"><div class="mtag">Urban Company</div><h3>Varun Khaitan</h3><div class="role">Urban Company Founder</div><p>IIT Kanpur · Ex-BCG</p></div></div>
+      <div class="mentor"><div class="ph"><img src="images/kunal.jpeg" alt="Kunal Shah" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">CRED</div><h3>Kunal Shah</h3><div class="role">Cred Founder</div><p>Advisor · Sequoia Capital · Advisor AngelList · Avid Angel Investor</p></div></div>
+      <div class="mentor"><div class="ph"><img src="images/vidit.jpeg" alt="Vidit Aatrey" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Meesho</div><h3>Vidit Aatrey</h3><div class="role">Meesho Founder</div><p>IIT Delhi · Ex-InMobi</p></div></div>
+      <div class="mentor"><div class="ph"><img src="images/vijay.jpeg" alt="Vijay Shekhar" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Paytm</div><h3>Vijay Shekhar</h3><div class="role">Paytm Founder</div><p>Delhi College of Engineering · Avid Angel Investor</p></div></div>
+      <div class="mentor"><div class="ph"><img src="images/mekin.jpeg" alt="Mekin M" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Udhyam</div><h3>Mekin M</h3><div class="role">Udhyam Founder</div><p>Ex-Flipkart · Avid Angel Investor</p></div></div>
+      <div class="mentor"><div class="ph"><img src="images/abhiraj.jpeg" alt="Abhiraj Bhal" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Urban Company</div><h3>Abhiraj Bhal</h3><div class="role">Urban Company Founder</div><p>IIM Ahmedabad · IIT Kanpur</p></div></div>
+      <div class="mentor"><div class="ph"><img src="images/varun.jpeg" alt="Varun Khaitan" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Urban Company</div><h3>Varun Khaitan</h3><div class="role">Urban Company Founder</div><p>IIT Kanpur · Ex-BCG</p></div></div>
     </div>
     <p class="guests">...and 50+ startup founders</p>
   </div>
@@ -478,35 +488,6 @@
   </div>
 </section>
 
-<!-- ================= LIFE AT MESA ================= -->
-<section id="life">
-  <div class="wrap">
-    <div class="eyebrow">Sneak peek</div>
-    <h2>Life at <em>Mesa.</em></h2>
-    <p class="lead">A glimpse into the founders, faculty and moments that shape the Mesa experience.</p>
-    <div class="hacks">
-      <div class="hack">
-        <div class="ph">Shark Tank India still, EverRaw pitch</div>
-        <div class="body">
-          <div class="num">Shark Tank India · Cohort 1</div>
-          <h3>EverRaw Foods</h3>
-          <p>What started as an idea at Mesa became EverRaw — a spreads brand that hit ₹2.5 lakh in revenue within 10 weeks on campus, reaching 500 customers through Mesa's BYOB sprint.</p>
-          <div class="out">Lucky then took it to the biggest stage — pitching EverRaw on Shark Tank India Season 5.</div>
-        </div>
-      </div>
-      <div class="hack">
-        <div class="ph">Convocation photo, Ghazal Alagh</div>
-        <div class="body">
-          <div class="num">Convocation · Mamaearth</div>
-          <h3>Ghazal Alagh</h3>
-          <p>Ghazal joined as guest of honor for Cohort 2's convocation. Students pitched their ventures live — 2 businesses from Mesa Startup Lab earned follow-ups with her team.</p>
-          <div class="out">Several students came away with hiring opportunities.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= STRONG ALUMNI BASE ================= -->
 <section id="alumni">
   <div class="wrap">
@@ -531,17 +512,26 @@
   </div>
 </section>
 
-<!-- ================= MARQUEE PROFESSORS ================= -->
-<section class="light" id="professors">
+<!-- ================= WHO YOU'LL BUILD WITH ================= -->
+<section id="mentors">
   <div class="wrap">
-    <div class="eyebrow">Marquee professors</div>
-    <h2>Taught by <em>practitioners.</em></h2>
-    <p class="lead">A peek into our most-loved courses, taught by well-acclaimed professors from across the globe.</p>
-    <div class="personas">
-      <div class="persona"><h3>Operations Management</h3><div class="subtitle">by Achal Bassamboo</div><p>Professor of Decision Sciences &amp; Operations at Northwestern University, Kellogg. Learn to design processes that scale, machines that run themselves, and keep your business always a step ahead.</p><p style="font-size:12px;font-weight:700;color:var(--ink-green)">Northwestern Kellogg · Stanford University</p></div>
-      <div class="persona"><h3>Associate Chair of Marketing</h3><div class="subtitle">by Tim Calkins</div><p>Kellogg School of Management, Northwestern University. Learn how iconic brands are built: from finding their voice to dominating their category.</p><p style="font-size:12px;font-weight:700;color:var(--ink-green)">Northwestern Kellogg · Harvard Business School</p></div>
-      <div class="persona"><h3>Digital Marketing &amp; Strategy</h3><div class="subtitle">by Siddarth Menon</div><p>Marketing &amp; Strategy Consultant, Ex-CMO Drums Food International. Learn to design and run digital campaigns that convert, using real data from brands like CRED and Epigamia.</p><p style="font-size:12px;font-weight:700;color:var(--ink-green)">Coca-Cola · Colgate · Epigamia</p></div>
-      <div class="persona"><h3>Entrepreneurial Finance</h3><div class="subtitle">by Prof. Sundar Venkatesh</div><p>Educator &amp; learning consultant working with startups, enterprises and universities across Southeast Asia. Learn to analyze financial data, plan strategically, and make informed business decisions.</p><p style="font-size:12px;font-weight:700;color:var(--ink-green)">IIMB · Shiv Nadar University · AIT</p></div>
+    <div class="eyebrow">Who you'll build with</div>
+    <h2>Practitioners, <em>not lecturers.</em></h2>
+    <p class="lead">Build weekends are led by people who ship with these tools every week. Every sprint team gets a mentor who has built with AI. Founders and VCs from Mesa's network join as guests through the year.</p>
+    <div class="scroller-head"><span class="scroller-count">8 mentors</span><div class="arrows"><button class="arrow" data-dir="-1" aria-label="Previous">←</button><button class="arrow" data-dir="1" aria-label="Next">→</button></div></div>
+    <div class="mentors" id="mentorScroller">
+      <div class="mentor"><div class="ph"><img src="images/Dhruv.jpeg" alt="Dhruv Dhingra" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Leads · Automations</div><h3>Dhruv Dhingra</h3><div class="role">Senior Business Manager, Lokal</div><p>Learn how to spot repetitive work in your own job and turn it into a live AI workflow that runs on its own.</p><div class="mlogo"><img src="images/lokal_app_logo.jpeg" alt="Lokal" loading="lazy" decoding="async"><img src="images/swiggy_in_logo.jpeg" alt="Swiggy" loading="lazy" decoding="async"></div></div></div>
+      <div class="mentor"><div class="ph"><img src="images/Bhaskarjit.jpeg" alt="Bhaskarjit Sarmah" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Leads · AI Agents</div><h3>Bhaskarjit Sarmah</h3><div class="role">Head of AI Research for Financial Services, Domyn</div><p>Learn how to design agents with the memory, tools, and guardrails to work reliably on their own.</p><div class="mlogo"><img src="images/Domyn.jpeg" alt="Domyn" loading="lazy" decoding="async"><img src="images/indian_school_of_business_logo.jpeg" alt="ISB" loading="lazy" decoding="async"><img src="images/mit_professional_education_logo.jpeg" alt="MIT" loading="lazy" decoding="async"></div></div></div>
+      <div class="mentor"><div class="ph"><img src="images/shivam2.png" alt="Shivam Tiwari" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Leads · Full-stack product</div><h3>Shivam Tiwari</h3><div class="role">Product Manager, Applied AI, Infinia Technologies</div><p>Learn how to take an app from database and auth to something real users can log into and pay for.</p><div class="mlogo"><img src="images/infinia_holdings_logo.jpeg" alt="Infinia" loading="lazy" decoding="async"><img src="images/indian_institute_of_technology_bombay_logo.jpeg" alt="IIT Bombay" loading="lazy" decoding="async"><img src="images/the_good_bug.jpeg" alt="The Good Bug" loading="lazy" decoding="async"></div></div></div>
+      <div class="mentor"><div class="ph"><img src="images/Rushab.png" alt="Rushab Solanki" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Leads · Consumer launch</div><h3>Rushab Solanki</h3><div class="role">Senior Manager, Product Management, Capital One</div><p>Learn how to design an onboarding flow, a paywall, and a funnel that actually convert.</p><div class="mlogo"><img src="images/capital_one_logo.jpeg" alt="Capital One" loading="lazy" decoding="async"><img src="images/toothsi_logo.jpeg" alt="toothsi" loading="lazy" decoding="async"><img src="images/birla_institute_of_technology_and_science_pilani_logo.jpeg" alt="BITS Pilani" loading="lazy" decoding="async"></div></div></div>
+      <div class="mentor"><div class="ph"><img src="images/Abdul Rahman.png" alt="Abdul Rahman" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Leads · B2B product</div><h3>Abdul Rahman</h3><div class="role">Product, Atomicwork</div><p>Learn how to design roles, permissions, and dashboards that a real business would trust and adopt.</p><div class="mlogo"><img src="images/atomicworkhq_logo.jpeg" alt="Atomicwork" loading="lazy" decoding="async"></div></div></div>
+      <div class="mentor"><div class="ph"><img src="images/Yashovardhan.jpeg" alt="Yashovardhan Pareek" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Leads · 0 to 1</div><h3>Yashovardhan Pareek</h3><div class="role">Co-Founder, Brane</div><p>Learn how to find a problem worth solving and validate it with evidence before you build.</p><div class="mlogo"><img src="images/rit_labs_logo.jpeg" alt="Brane" loading="lazy" decoding="async"></div></div></div>
+      <div class="mentor"><div class="ph"><img src="images/Blessin.jpeg" alt="Blessin George Varghese" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Sprint mentor</div><h3>Blessin George Varghese</h3><div class="role">AI &amp; Product, Ex-Bajaj Finserv Health</div><p>Learn how to take your team from idea to a shipped product over the eight-week build sprint.</p><div class="mlogo"><img src="images/bajaj_finserv_health_logo.jpeg" alt="Bajaj Finserv Health" loading="lazy" decoding="async"></div></div></div>
+      <div class="mentor"><div class="ph"><img src="images/Vishal.png" alt="Vishal Gupta" loading="lazy" decoding="async"></div><div class="mbody"><div class="mtag">Sprint mentor</div><h3>Vishal Gupta</h3><div class="role">Group Product Manager, Haleon</div><p>Learn how to turn eight weeks of building into one finished product and a pitch worth giving.</p><div class="mlogo"><img src="images/haleon_logo.jpeg" alt="Haleon" loading="lazy" decoding="async"><img src="images/Wayfair.jpeg" alt="Wayfair" loading="lazy" decoding="async"><img src="images/indian_institute_of_foreign_trade_logo.jpeg" alt="IIFT" loading="lazy" decoding="async"></div></div></div>
+    </div>
+    <div class="guest-strip">
+      <div class="tools-lbl">Guest founders and VCs on campus</div>
+      <div class="chips"><span class="chip">Titan Capital</span><span class="chip">Antler</span><span class="chip">Fireside Ventures</span><span class="chip">Blume Ventures</span><span class="chip">WTF Fund</span><span class="chip">Campus Fund</span></div>
     </div>
   </div>
 </section>
@@ -1048,7 +1038,7 @@
     <div class="foot">
       <div><div class="logo" style="margin-bottom:14px">MESA</div><p>Mesa School of Business<br>WeWork, Bannerghatta Road, Bengaluru 560076<br>info@mesaschool.co</p></div>
       <div><h4>Programs</h4><ul><li><a href="#">PG Program</a></li><li><a href="#">UG Program</a></li><li><a href="#top">PGPx: AI Systems &amp; Business</a></li><li><a href="#">Online Programs</a></li></ul></div>
-      <div><h4>More</h4><ul><li><a href="#">Outcomes</a></li><li><a href="#">Incubation</a></li><li><a href="#alumni">Alumni Directory</a></li><li><a href="#professors">Faculty</a></li></ul></div>
+      <div><h4>More</h4><ul><li><a href="#">Outcomes</a></li><li><a href="#">Incubation</a></li><li><a href="#alumni">Alumni Directory</a></li><li><a href="#mentors">Mentors</a></li></ul></div>
       <div><h4>PGPx AI Systems</h4><ul><li><a href="#curriculum">Curriculum</a></li><li><a href="#who">Who it's for</a></li><li><a href="#admissions">Admissions</a></li><li><a href="#faq">FAQ</a></li></ul></div>
     </div>
     <div class="copy"><span>© 2026 Mesa School of Business</span><span><a href="#">Terms of use</a> · <a href="#">Privacy policy</a></span></div>
